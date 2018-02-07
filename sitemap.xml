@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/02/07/Hgame-pwn/</loc>
+    
+    <lastmod>2018-02-07T05:09:37.540Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/02/05/HITCTF2018-writeup/</loc>
     
     <lastmod>2018-02-05T01:13:54.627Z</lastmod>

