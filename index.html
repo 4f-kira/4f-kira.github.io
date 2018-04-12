@@ -171,11 +171,71 @@
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/04/强网杯2018-pwn/" >
+            <a class="abstract-title" href = "/2018/04/12/qwb-pwn-opm/" >
                 
-                    <span>强网杯2018 pwn</span>
+                    <span>qwb-pwn-opm</span>
             </a>
-            <a class="content-show-full" href = "/2018/04/04/强网杯2018-pwn/" >
+            <a class="content-show-full" href = "/2018/04/12/qwb-pwn-opm/" >
+                <div class="abstract-content">
+                    opm首先学习一下在IDA创建结构体，https://blog.csdn.net/hgy413/article/details/7104304
+12345600000000 role            struc ; (sizeof=0x20, mappedto_6)00000000 func            dq ?00000008 name            dq ?00000010 length          dq ?00000018 punch_num       dq ?00000020 role            ends
+按y重新设置类型后，add_r...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = pwn>pwn</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/04/12</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2018/04/12/qwb-pwn-raisepig/" >
+                
+                    <span>qwb-pwn-raisepig</span>
+            </a>
+            <a class="content-show-full" href = "/2018/04/12/qwb-pwn-raisepig/" >
+                <div class="abstract-content">
+                    raisepig跟pwnable.tw的Secret Garden非常似。菜单有5个选项：12345puts(&quot;1 . Raise a pig &quot;);puts(&quot;2 . Visit pigs &quot;);puts(&quot;3 . Eat a pig&quot;);puts(&quot;4 . Eat the whole Pig Farm&quot;);puts(&quot;5 . Leave the Farm&quot;);
+IDA中建一个pig的结构体：
+1234500000000 pigs            struc ; (sizeof=0...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = pwn>pwn</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/04/12</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2018/04/04/qwb-pwn-silent1&2/" >
+                
+                    <span>qwb-pwn-silent1&amp;2</span>
+            </a>
+            <a class="content-show-full" href = "/2018/04/04/qwb-pwn-silent1&2/" >
                 <div class="abstract-content">
                     好菜，只做了一题，慢慢补~
 silent程序有3个功能，分别是add，delete和edit
@@ -224,30 +284,6 @@ guess_number12345678printf("enter your guess:");  __isoc99_scanf("%s", &amp;nptr
                 <!-- date  -->
                 <div class="abstract-date">
                     <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/02/07</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/02/05/HITCTF2018-writeup/" >
-                
-                    <span>HITCTF2018-writeup</span>
-            </a>
-            <a class="content-show-full" href = "/2018/02/05/HITCTF2018-writeup/" >
-                <div class="abstract-content">
-                    easy_xor.apk1234a='kmqgwg]Tm3=NE_/4ouKJW@WE^'b='#$%$#!&amp;#^_^~(:p@_*#######'c = [chr(ord(x)^ord(y)) for x,y in zip(a,b)]print ''.join(c)
-简单xor即可：HITCTF{w3lc0me_t0_hitctf}
-stackflow123456789int vuln()&#123;  char buf; // [esp+0h] [ebp-28h]  puts("Welcome to pwn world!\nLeave your name:");  fflus...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/02/05</span>
                 </div>
             </div>
         </article>
@@ -467,7 +503,12 @@ More...
     
     
     
-    <div class="total-archive"> Total : 5 </div>
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 6 </div>
     
     <div class="post-archive">
     
@@ -479,17 +520,22 @@ More...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/04</span><a class="archive-post-title" href= "/2018/04/04/强网杯2018-pwn/" >强网杯2018 pwn</a>
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2018/04/12/qwb-pwn-raisepig/" >qwb-pwn-raisepig</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2018/04/12/qwb-pwn-opm/" >qwb-pwn-opm</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span><a class="archive-post-title" href= "/2018/04/04/qwb-pwn-silent1&2/" >qwb-pwn-silent1&2</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">02/07</span><a class="archive-post-title" href= "/2018/02/07/Hgame-pwn/" >Hgame pwn</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "/2018/02/05/HITCTF2018-writeup/" >HITCTF2018-writeup</a>
         </li>
     
     

