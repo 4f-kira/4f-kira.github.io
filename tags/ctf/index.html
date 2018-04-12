@@ -158,15 +158,15 @@
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/12/qwb-pwn-opm/" >
+            <a class="abstract-title" href = "/2018/02/05/HITCTF2018-writeup/" >
                 
-                    <span>qwb-pwn-opm</span>
+                    <span>HITCTF2018-writeup</span>
             </a>
-            <a class="content-show-full" href = "/2018/04/12/qwb-pwn-opm/" >
+            <a class="content-show-full" href = "/2018/02/05/HITCTF2018-writeup/" >
                 <div class="abstract-content">
-                    opm首先学习一下在IDA创建结构体，https://blog.csdn.net/hgy413/article/details/7104304
-12345600000000 role            struc ; (sizeof=0x20, mappedto_6)00000000 func            dq ?00000008 name            dq ?00000010 length          dq ?00000018 punch_num       dq ?00000020 role            ends
-按y重新设置类型后，add_r...
+                    easy_xor.apk1234a='kmqgwg]Tm3=NE_/4ouKJW@WE^'b='#$%$#!&amp;#^_^~(:p@_*#######'c = [chr(ord(x)^ord(y)) for x,y in zip(a,b)]print ''.join(c)
+简单xor即可：HITCTF{w3lc0me_t0_hitctf}
+stackflow123456789int vuln()&#123;  char buf; // [esp+0h] [ebp-28h]  puts("Welcome to pwn world!\nLeave your name:");  fflus...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -174,132 +174,13 @@
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = pwn>pwn</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = ctf>ctf</a>
     
 </div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/04/12</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/12/qwb-pwn-raisepig/" >
-                
-                    <span>qwb-pwn-raisepig</span>
-            </a>
-            <a class="content-show-full" href = "/2018/04/12/qwb-pwn-raisepig/" >
-                <div class="abstract-content">
-                    raisepig跟pwnable.tw的Secret Garden非常似。菜单有5个选项：12345puts(&quot;1 . Raise a pig &quot;);puts(&quot;2 . Visit pigs &quot;);puts(&quot;3 . Eat a pig&quot;);puts(&quot;4 . Eat the whole Pig Farm&quot;);puts(&quot;5 . Leave the Farm&quot;);
-IDA中建一个pig的结构体：
-1234500000000 pigs            struc ; (sizeof=0...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = pwn>pwn</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/04/12</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/04/qwb-pwn-silent1&2/" >
-                
-                    <span>qwb-pwn-silent1&amp;2</span>
-            </a>
-            <a class="content-show-full" href = "/2018/04/04/qwb-pwn-silent1&2/" >
-                <div class="abstract-content">
-                    好菜，只做了一题，慢慢补~
-silent程序有3个功能，分别是add，delete和edit
-12345678910111213141516171819__int64 add_()&#123;  size_t size; // [rsp+0h] [rbp-20h]  unsigned __int64 i; // [rsp+8h] [rbp-18h]  void *v3; // [rsp+10h] [rbp-10h]  unsigned __int64 v4; // [rsp+18h] [rbp-8h]  v4 = __readfsqword(0x28u);  __isoc99_scanf...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = pwn>pwn</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/04/04</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/02/07/Hgame-pwn/" >
-                
-                    <span>Hgame pwn</span>
-            </a>
-            <a class="content-show-full" href = "/2018/02/07/Hgame-pwn/" >
-                <div class="abstract-content">
-                    终于补完了Hgame的pwn，学到很多新姿势。
-guess_number12345678printf("enter your guess:");  __isoc99_scanf("%s", &amp;nptr);  if ( atoi(&amp;nptr) == a1 )  &#123;    printf("OHHHHHHH! u did it !\norz orz orz orz\nhere is your flag:");    system("cat flag");    exit(0);  &#125;
-虽然开了canary，但是只要输入的东西覆盖到随机数，判断一样就cat f...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = pwn>pwn</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/02/07</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/01/30/pwn-imdb/" >
-                
-                    <span>pwn-imdb</span>
-            </a>
-            <a class="content-show-full" href = "/2018/01/30/pwn-imdb/" >
-                <div class="abstract-content">
-                    blog已经搭了一段时间了，拖延症发作，一直没写。最近没做什么有意思的题，就写一下某CTF群的入群题解题思路。
-程序伪代码menu1234567891011121314151617181920212223242526272829303132333435void __fastcall main(__int64 a1, char **a2, char **a3)&#123;  char v3; // [rsp+0h] [rbp-18h]  setbuf(stdout, 0LL);  signal(14, handler);  puts("*** Welcome to IMDB ***"); ...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = pwn>pwn</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/01/30</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/02/05</span>
                 </div>
             </div>
         </article>
