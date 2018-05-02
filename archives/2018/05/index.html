@@ -158,18 +158,13 @@
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/16/Python-is-the-best-language/" >
+            <a class="abstract-title" href = "/2018/05/02/redhat2018/" >
                 
-                    <span>Python-is-the-best-language</span>
+                    <span>广东红帽杯2018 writeup</span>
             </a>
-            <a class="content-show-full" href = "/2018/04/16/Python-is-the-best-language/" >
+            <a class="content-show-full" href = "/2018/05/02/redhat2018/" >
                 <div class="abstract-content">
-                    本文纯属抄袭，如有改动，纯属手残。
-原writeup见：
-http://skysec.top/2018/04/01/Python-is-the-best-language/#%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84
-https://xz.aliyun.com/t/2219#toc-1
-https://lorexxar.cn/2018/03/26/qwb2018/#python-is-best-language
-环境搭建12345678pip install Flaskpip install flask_loginpip install flask_boot...
+                    MiscNot Only Wireshark（solved）http://static2.ichunqiu.com/icq/resources/fileupload/CTF/echunqiu/redhat/NotOnlyWireshark_ed63b63425ec3ed09470d8715b208293.zip?pass=nullhint: tshark打开流量包，直接查看http数据，发现存在很多name=xxx的访问记录，将所有16进制提取出来。1# strings 123.pcapng| grep name| grep -oP "name=[0-9A-F]+"| tr -d 'na...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -177,103 +172,13 @@ https://lorexxar.cn/2018/03/26/qwb2018/#python-is-best-language
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = web>web</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = ctf>ctf</a>
     
 </div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/04/16</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/12/qwb-pwn-opm/" >
-                
-                    <span>qwb-pwn-opm</span>
-            </a>
-            <a class="content-show-full" href = "/2018/04/12/qwb-pwn-opm/" >
-                <div class="abstract-content">
-                    opm首先学习一下在IDA创建结构体，https://blog.csdn.net/hgy413/article/details/7104304
-12345600000000 role            struc ; (sizeof=0x20, mappedto_6)00000000 func            dq ?00000008 name            dq ?00000010 length          dq ?00000018 punch_num       dq ?00000020 role            ends
-按y重新设置类型后，add_r...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = pwn>pwn</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/04/12</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/12/qwb-pwn-raisepig/" >
-                
-                    <span>qwb-pwn-raisepig</span>
-            </a>
-            <a class="content-show-full" href = "/2018/04/12/qwb-pwn-raisepig/" >
-                <div class="abstract-content">
-                    raisepig跟pwnable.tw的Secret Garden非常似。菜单有5个选项：12345puts(&quot;1 . Raise a pig &quot;);puts(&quot;2 . Visit pigs &quot;);puts(&quot;3 . Eat a pig&quot;);puts(&quot;4 . Eat the whole Pig Farm&quot;);puts(&quot;5 . Leave the Farm&quot;);
-IDA中建一个pig的结构体：
-1234500000000 pigs            struc ; (sizeof=0...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = pwn>pwn</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/04/12</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/04/04/qwb-pwn-silent1&2/" >
-                
-                    <span>qwb-pwn-silent1&amp;2</span>
-            </a>
-            <a class="content-show-full" href = "/2018/04/04/qwb-pwn-silent1&2/" >
-                <div class="abstract-content">
-                    好菜，只做了一题，慢慢补~
-silent程序有3个功能，分别是add，delete和edit
-12345678910111213141516171819__int64 add_()&#123;  size_t size; // [rsp+0h] [rbp-20h]  unsigned __int64 i; // [rsp+8h] [rbp-18h]  void *v3; // [rsp+10h] [rbp-10h]  unsigned __int64 v4; // [rsp+18h] [rbp-8h]  v4 = __readfsqword(0x28u);  __isoc99_scanf...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = pwn>pwn</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/04/04</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/05/02</span>
                 </div>
             </div>
         </article>
