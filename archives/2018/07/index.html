@@ -158,15 +158,41 @@
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2018/02/07/Hgame-pwn/" >
+            <a class="abstract-title" href = "/2018/07/11/hitcontraining/" >
                 
-                    <span>Hgame pwn</span>
+                    <span>Hitcon-Training-Writeup</span>
             </a>
-            <a class="content-show-full" href = "/2018/02/07/Hgame-pwn/" >
+            <a class="content-show-full" href = "/2018/07/11/hitcontraining/" >
                 <div class="abstract-content">
-                    终于补完了Hgame的pwn，学到很多新姿势。
-guess_number12345678printf("enter your guess:");  __isoc99_scanf("%s", &amp;nptr);  if ( atoi(&amp;nptr) == a1 )  &#123;    printf("OHHHHHHH! u did it !\norz orz orz orz\nhere is your flag:");    system("cat flag");    exit(0);  &#125;
-虽然开了canary，但是只要输入的东西覆盖到随机数，判断一样就cat f...
+                    Outline
+Basic Knowledge
+Introduction
+Reverse Engineering
+Static Analysis
+Dynamic Analysis 
+
+
+Exploitation
+Useful Tool
+IDA PRO
+GDB
+Pwntool
+
+
+lab 1 - sysmagic
+
+
+Section
+Compile,linking,assmbler
+Execution
+how program get run
+Segment 
+
+
+x86 assembly
+Calling convention 
+lab 2 - open/read/write
+shellco...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -180,37 +206,7 @@ guess_number12345678printf("enter your guess:");  __isoc99_scanf("%s", &amp;nptr
                 
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/02/07</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018/02/05/HITCTF2018-writeup/" >
-                
-                    <span>HITCTF2018-writeup</span>
-            </a>
-            <a class="content-show-full" href = "/2018/02/05/HITCTF2018-writeup/" >
-                <div class="abstract-content">
-                    easy_xor.apk1234a='kmqgwg]Tm3=NE_/4ouKJW@WE^'b='#$%$#!&amp;#^_^~(:p@_*#######'c = [chr(ord(x)^ord(y)) for x,y in zip(a,b)]print ''.join(c)
-简单xor即可：HITCTF{w3lc0me_t0_hitctf}
-stackflow123456789int vuln()&#123;  char buf; // [esp+0h] [ebp-28h]  puts("Welcome to pwn world!\nLeave your name:");  fflus...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = ctf>ctf</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/02/05</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2018/07/11</span>
                 </div>
             </div>
         </article>
