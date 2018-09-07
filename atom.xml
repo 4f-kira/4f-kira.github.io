@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-07T13:44:25.173Z</updated>
+  <updated>2018-09-07T13:45:38.597Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>wangdingbei</title>
+    <title>某比赛吐槽</title>
     <link href="http://yoursite.com/2018/09/07/wangdingbei/"/>
     <id>http://yoursite.com/2018/09/07/wangdingbei/</id>
     <published>2018-09-07T13:41:09.000Z</published>
-    <updated>2018-09-07T13:44:25.173Z</updated>
+    <updated>2018-09-07T13:45:38.597Z</updated>
     
     <content type="html"><![CDATA[<p> 今年参加了一次某春秋的红帽杯，已经被恶心了一次，想不想这次网鼎杯更加肆无忌惮。本来是不打算参加的，所以也没认真准备。</p><p> <img src="http://ww1.sinaimg.cn/large/6701be31gy1fv1b29wr0nj21400u0q5z.jpg" alt="image"></p><p> <img src="http://ww1.sinaimg.cn/large/6701be31gy1fv1b2jjp0xj21400u00x4.jpg" alt="image"></p><h2 id="半决赛"><a href="#半决赛" class="headerlink" title="半决赛"></a>半决赛</h2><h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>   一道web三道pwn，web的权限很迷，上去发现ctf的账号无法权限修改网站，一度懵逼，还好细心的队友发现可以<code>su apache</code>。好彩web没预留无脑一句话，不至于一上来就被上不死马（参考今年红帽杯，神一般的速度）。本组实力较弱，web很迟才有队伍拿一血，后面抓到别人的流量直接打回去了，不过脚本没准备好，重放速度有点慢。后面看pwn题，发现一道是原题，就是改了一下描述而已，然而gamebox用的是centos，dump下libc放在ubuntu，死活运行不起来，无法动态调试，中途一度想放弃治疗，后来换了个姿势，发现竟然成功getshell了，很幸运的拿下了pwn的一血。然而自动提交的脚本效果不佳，导致有一半的flag都没交上，有几轮甚至一个都没提交，后来发现不还如用burp跑稳定。之后，有队伍做出了其余两题pwn，其中一题成功抓到流量，由于一个低级错误，复现时间过长，导致被别人抛离了，另外一题流量没抓齐，之后再补吧。</p><h3 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h3><p>  拿到pwn之后，本以为可以轻松打全场，但是发现后来能打到的只10多队，很多直接是端口都不通，也不见有服务down扣分的情况，上通防我就认了，端口不通都不算服务异常？！队友举手找裁判投诉，后面也不了了之。事后看知乎吐槽，估计半决赛连check都没有，直接删站，删ELF完事。</p><h2 id="决赛"><a href="#决赛" class="headerlink" title="决赛"></a>决赛</h2><h3 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h3><p>  时间没到，发现就能登gamebox了，然而快开始了有无缘无故断掉了，看到旁边的师傅已经准备脚本打过，瑟瑟发抖。网络连通后，发现web题跟昨天的一毛一样，有一题pwn也是（这么省钱吗？），手脚太慢，没把握住机会拿分，损失惨重。还有一个噩耗是，昨天通防pwn的方法不行了（看来昨晚加班写checker了），服务异常扣了很多分。名次一度到30+，后来稳住之后，靠昨天的脚本，慢慢的打回来了，web题也抓到Venenof7师傅的流量，也成功回放拿了不少flag，pwn题调整了一下脚本，可以稳定15+个flag，两题加起来有30+个flag，排名也稳步前进。当我以为可以苟住的时候，来自东方的神秘力量出现了，gamebox开始被打了，每轮都会被随机打一两个，开始手忙脚乱地去修复，不小心还导致服务down了几次，瞬间崩盘。事后发现，其实根本没必要修复，一切都是命运的安排（不便多说）。赛后发现pwn题其实不难，没花精力去搞一下确实太亏了，技不如人，甘拜下风。</p><h3 id="吐槽-1"><a href="#吐槽-1" class="headerlink" title="吐槽"></a>吐槽</h3><p>  决赛终于体验了一把什么叫神仙打架，什么0day拿flag，什么叫被安排得明明白白。还是好好学习吧，提升下技术，像人家eee，NU1l，0x300那么强劲，别人也安排不了你。</p>]]></content>
     
