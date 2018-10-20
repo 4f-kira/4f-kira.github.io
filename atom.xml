@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-07T13:45:38.597Z</updated>
+  <updated>2018-10-20T14:26:54.215Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vnote+企鹅云打造你的个人笔记</title>
+    <link href="http://yoursite.com/2018/10/20/vnote/"/>
+    <id>http://yoursite.com/2018/10/20/vnote/</id>
+    <published>2018-10-20T14:25:26.000Z</published>
+    <updated>2018-10-20T14:26:54.215Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前一直用有道云做笔记，然而有道云的功能实在太垃圾了，唯一值得称赞的就只有免费空间大和同步速度快了，不支持代码高亮，搜索功能垃圾得无法忍受，找笔记全靠大脑模糊索引。是时候淘汰这种垃圾软件了！！！</p><p>自从学习了用markdown做笔记之后，就一发不可收拾了，有道云也改用了markdown来做笔记，有道云的markdown功能其实也是能接受的，然而根本没办法搜索内容。当然也有<code>Typora</code>这些写markdown的神器，然而做笔记还要考虑多台电脑数据的同步问题，<code>Typora</code>用来写markdown还可以，做笔记就有点不方便。</p><h2 id="vnote"><a href="#vnote" class="headerlink" title="vnote"></a>vnote</h2><p>项目地址：<a href="https://github.com/tamlok/vnote" target="_blank" rel="noopener">https://github.com/tamlok/vnote</a></p><p>著名划水网站<code>V2EX</code>网友开发的一款笔记工具，功能非常强劲，能满足强迫症患者使用markdown的一切需求（不是我），作者试这么说这款软件的：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VNote的设计理念就是： 采用精心设计的语法高亮，以及一些辅助手段，在不牺牲文本细节的前提下，最大限度地减小Markdown编辑和阅读之间的割裂感。</span><br></pre></td></tr></table></figure><p><strong>程序界面</strong></p><p><img src="http://ww1.sinaimg.cn/large/6701be31gy1fwf15exr2kj20zl0kh0uu.jpg" alt=""></p><p>在GitHub下载绿色版解压即用，十分方便。</p><h2 id="企鹅云"><a href="#企鹅云" class="headerlink" title="企鹅云"></a>企鹅云</h2><p>为了解决笔记同步和备份问题，直接用<code>git</code>解决好了，vnote做笔记就是一堆的文件，直接同步到远程代码仓库就OXXK了。为何要用企鹅云，主要考虑<code>Github</code>没有免费私密仓（<del>总有羞羞的笔记不能公开嘛</del>），而且有时速度感人。自己搭个<code>gitlab</code>，容易会炸，还要运维太麻烦了。</p><p>官网地址：<a href="https://dev.tencent.com/" target="_blank" rel="noopener">https://dev.tencent.com/</a></p><p>注册后私密仓数量不受限制，仓库容量也是不限制的，国内同步速度也很快。</p><h2 id="部署方式"><a href="#部署方式" class="headerlink" title="部署方式"></a>部署方式</h2><ul><li><p>安装git，下载vnote，注册企鹅云</p></li><li><p>创建一个新项目</p><p><img src="http://ww1.sinaimg.cn/large/6701be31gy1fwf1ozr85dj20w60isaap.jpg" alt=""></p></li><li><p>clone到本地</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://git.dev.tencent.com/xxxx/vnote_test.git</span><br><span class="line"><span class="built_in">cd</span> vnote_test</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"# vnote_test"</span> &gt;&gt; README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">"first commit"</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><ul><li><p>vnote选择这个文件夹做目录</p></li><li><p>然后就可以愉快的写markdown了</p></li><li><p>编写一个简单的bat脚本，方便同步到远程仓库</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"%date% %time%"</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure><p><strong>同步效果图</strong></p></li></ul><p><img src="http://ww1.sinaimg.cn/large/6701be31gy1fwf1lor4i1j213h0k00uy.jpg" alt=""></p><h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>vnote还要很多强大的功能还不会用，一大堆笔记有排搬了[哭]。本文纯属凑数，如有不对的地方，请无视~</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;之前一直用有道云做笔记，然而有道云的功能实在太垃圾了，唯一值得称赞的就只有免费空间大和同步速度快了，不支持代码高亮，搜索功能垃圾得无法忍受，找笔记全靠大脑模糊索引。是时候淘汰这种垃圾软件了！！！&lt;/p&gt;
+&lt;p&gt;自从学习了用markdown做笔记之后，就一发不可收拾了，有道云
+      
+    
+    </summary>
+    
+    
+      <category term="杂" scheme="http://yoursite.com/tags/%E6%9D%82/"/>
+    
+  </entry>
   
   <entry>
     <title>某比赛吐槽</title>
