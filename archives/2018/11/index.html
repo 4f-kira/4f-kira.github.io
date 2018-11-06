@@ -346,18 +346,19 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/01/30/pwn-imdb/" >
+        <a class="abstract-title" href = "/2018/11/06/huwangbei-awd-pwn/" >
             
-                <span>pwn-imdb</span>
+                <span>首届护网杯AWD PWN题目writeup</span>
         </a>
         <div class="abstract-content">
-            blog已经搭了一段时间了，拖延症发作，一直没写。最近没做什么有意思的题，就写一下某CTF群的入群题解题思路。
-程序伪代码menu1234567891011121314151617181920212223242526272829303132333435void __fastcall main(__int64 a1, char **a2, char **a3)&#123;  char v3; // [rsp+0h] [rbp-18h]  setbuf(stdout, 0LL);  signal(14, handler);  puts("*** Welcome to IMDB ***"); ...
+            前言上个月在护网杯打了个酱油，第一次打某宁的线下赛，风格跟某春秋差别还是挺大的，没什么端口限制，提flag接口也很友好，属于最开放的网络环境了，可以用各种大杀器（然而我没有准备= =|||）。比赛当时只用到了最简单的洞，虽然官方给了流量（队友不说我都没发现。。。），但是没啥经验，比赛的时候也没成功重放。总体来说题目质量不错，难得有攻击流量，赛后来学习一波吧~
+shell这题有一个超级简单的命令执行洞，直接ls后闭合命令就可以了，如/ &amp;&amp; cat ../flag。另外还有一个堆的洞，网上有大神分析过，我就不写了，直接给EXP，原理差不多，漏洞利用方式略有不同而已。
+123...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/30</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/06</span>
             </div>
             <!-- tags  -->
             
