@@ -401,9 +401,9 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="Not-Only-Wireshark（solved）"><a href="#Not-Only-Wireshark（solved）" class="headerlink" title="Not Only Wireshark（solved）"></a>Not Only Wireshark（solved）</h3><p><a href="http://static2.ichunqiu.com/icq/resources/fileupload/CTF/echunqiu/redhat/NotOnlyWireshark_ed63b63425ec3ed09470d8715b208293.zip?pass=null" target="_blank" rel="noopener">http://static2.ichunqiu.com/icq/resources/fileupload/CTF/echunqiu/redhat/NotOnlyWireshark_ed63b63425ec3ed09470d8715b208293.zip?pass=null</a><br><strong>hint: tshark</strong><br>打开流量包，直接查看http数据，发现存在很多name=xxx的访问记录，将所有16进制提取出来。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> strings 123.pcapng| grep name| grep -oP "name=[0-9A-F]+"| tr -d 'name='|tr -d '\n' &gt; flag</span><br></pre></td></tr></table></figure></p>
+        <h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="Not-Only-Wireshark（solved）"><a href="#Not-Only-Wireshark（solved）" class="headerlink" title="Not Only Wireshark（solved）"></a>Not Only Wireshark（solved）</h3><p><a href="http://static2.ichunqiu.com/icq/resources/fileupload/CTF/echunqiu/redhat/NotOnlyWireshark_ed63b63425ec3ed09470d8715b208293.zip?pass=null" target="_blank" rel="noopener">http://static2.ichunqiu.com/icq/resources/fileupload/CTF/echunqiu/redhat/NotOnlyWireshark_ed63b63425ec3ed09470d8715b208293.zip?pass=null</a><br><strong>hint: tshark</strong><br>打开流量包，直接查看http数据，发现存在很多name=xxx的访问记录，将所有16进制提取出来。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> strings 123.pcapng| grep name| grep -oP <span class="string">"name=[0-9A-F]+"</span>| tr -d <span class="string">'name='</span>|tr -d <span class="string">'\n'</span> &gt; flag</span></span><br></pre></td></tr></table></figure></p>
 <p>修复zip文件头</p>
-<p>密码是：<code>?id=1128%23</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> strings 123.pcapng| grep key</span><br><span class="line">&amp;GET /xss/example4.php?key=?id=1128%23 HTTP/1.1</span><br><span class="line">Referer: http://10.211.55.15/xss/example4.php?key=?id=1128%23</span><br></pre></td></tr></table></figure></p>
+<p>密码是：<code>?id=1128%23</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> strings 123.pcapng| grep key</span></span><br><span class="line">&amp;GET /xss/example4.php?key=?id=1128%23 HTTP/1.1</span><br><span class="line">Referer: http://10.211.55.15/xss/example4.php?key=?id=1128%23</span><br></pre></td></tr></table></figure></p>
 <h3 id="这是道web题？（solved）"><a href="#这是道web题？（solved）" class="headerlink" title="这是道web题？（solved）"></a>这是道web题？（solved）</h3><p><a href="http://static2.ichunqiu.com/icq/resources/fileupload/CTF/echunqiu/redhat/yunCMS_256035f22b73fdb1c90fd7503c4005ed.zip?pass=null" target="_blank" rel="noopener">http://static2.ichunqiu.com/icq/resources/fileupload/CTF/echunqiu/redhat/yunCMS_256035f22b73fdb1c90fd7503c4005ed.zip?pass=null</a><br>直接用D盾扫一下，发现一个jsp大马和一个变形php一句话</p>
 <p>打开jsp大马看到<code>&lt;Bad way. Get OUT. No000000000flag&gt;</code>，估计不在这里</p>
 <p>然后打开变形php一句话，发现下面有提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">You eventually found me</span><br><span class="line">I am a hacker from Georgia</span><br><span class="line">You are doing too much food at your upload</span><br><span class="line">Used tshark to make traffic records?</span><br><span class="line">Then you go to the traffic to find me</span><br></pre></td></tr></table></figure></p>
@@ -704,9 +704,26 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 14
+        Total : 15
         </div>
         <!-- search  -->
         
@@ -719,6 +736,11 @@ top:50vh;
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/20</span><a class="archive-post-title" href= "/2018/12/20/swpuctf2018/" >swpuctf2018</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -797,13 +819,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="ctf"><span class="iconfont-archer">&#xe606;</span>ctf</span>
     
-        <span class="sidebar-tag-name" data-tags="pwn"><span class="iconfont-archer">&#xe606;</span>pwn</span>
-    
         <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
     
-        <span class="sidebar-tag-name" data-tags="杂"><span class="iconfont-archer">&#xe606;</span>杂</span>
+        <span class="sidebar-tag-name" data-tags="pwn"><span class="iconfont-archer">&#xe606;</span>pwn</span>
     
         <span class="sidebar-tag-name" data-tags="吐槽"><span class="iconfont-archer">&#xe606;</span>吐槽</span>
+    
+        <span class="sidebar-tag-name" data-tags="杂"><span class="iconfont-archer">&#xe606;</span>杂</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
