@@ -78,6 +78,8 @@
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -201,10 +203,8 @@
 </head>
 
     
-        <body class="home-body">
     
-    
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,34 +220,21 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            kir[A]'s 小黑屋
-            <!-- 文章页  -->
-            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            
-            
-                Ju5t f0r fun~
-            
-            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -359,224 +346,6 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/05/02/redhat2018/" >
-            
-                <span>广东红帽杯2018 writeup</span>
-        </a>
-        <div class="abstract-content">
-            MiscNot Only Wireshark（solved）http://static2.ichunqiu.com/icq/resources/fileupload/CTF/echunqiu/redhat/NotOnlyWireshark_ed63b63425ec3ed09470d8715b208293.zip?pass=nullhint: tshark打开流量包，直接查看http数据，发现存在很多name=xxx的访问记录，将所有16进制提取出来。1# strings 123.pcapng| grep name| grep -oP "name=[0-9A-F]+"| tr -d 'na...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ctf">ctf</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/16/Python-is-the-best-language/" >
-            
-                <span>Python-is-the-best-language</span>
-        </a>
-        <div class="abstract-content">
-            本文纯属抄袭，如有改动，纯属手残。
-原writeup见：
-http://skysec.top/2018/04/01/Python-is-the-best-language/#%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84
-https://xz.aliyun.com/t/2219#toc-1
-https://lorexxar.cn/2018/03/26/qwb2018/#python-is-best-language
-环境搭建12345678pip install Flaskpip install flask_loginpip install flask_boot...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/12/qwb-pwn-opm/" >
-            
-                <span>qwb-pwn-opm</span>
-        </a>
-        <div class="abstract-content">
-            opm首先学习一下在IDA创建结构体，https://blog.csdn.net/hgy413/article/details/7104304
-12345600000000 role            struc ; (sizeof=0x20, mappedto_6)00000000 func            dq ?00000008 name            dq ?00000010 length          dq ?00000018 punch_num       dq ?00000020 role            ends
-按y重新设置类型后，add_r...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/12/qwb-pwn-raisepig/" >
-            
-                <span>qwb-pwn-raisepig</span>
-        </a>
-        <div class="abstract-content">
-            raisepig跟pwnable.tw的Secret Garden非常似。菜单有5个选项：12345puts(&quot;1 . Raise a pig &quot;);puts(&quot;2 . Visit pigs &quot;);puts(&quot;3 . Eat a pig&quot;);puts(&quot;4 . Eat the whole Pig Farm&quot;);puts(&quot;5 . Leave the Farm&quot;);
-IDA中建一个pig的结构体：
-1234500000000 pigs            struc ; (sizeof=0...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/04/qwb-pwn-silent1&2/" >
-            
-                <span>qwb-pwn-silent1&amp;2</span>
-        </a>
-        <div class="abstract-content">
-            好菜，只做了一题，慢慢补~
-silent程序有3个功能，分别是add，delete和edit
-12345678910111213141516171819__int64 add_()&#123;  size_t size; // [rsp+0h] [rbp-20h]  unsigned __int64 i; // [rsp+8h] [rbp-18h]  void *v3; // [rsp+10h] [rbp-10h]  unsigned __int64 v4; // [rsp+18h] [rbp-8h]  v4 = __readfsqword(0x28u);  __isoc99_scanf...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/07/Hgame-pwn/" >
-            
-                <span>Hgame pwn</span>
-        </a>
-        <div class="abstract-content">
-            终于补完了Hgame的pwn，学到很多新姿势。
-guess_number12345678printf("enter your guess:");  __isoc99_scanf("%s", &amp;nptr);  if ( atoi(&amp;nptr) == a1 )  &#123;    printf("OHHHHHHH! u did it !\norz orz orz orz\nhere is your flag:");    system("cat flag");    exit(0);  &#125;
-虽然开了canary，但是只要输入的东西覆盖到随机数，判断一样就cat f...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/05/HITCTF2018-writeup/" >
-            
-                <span>HITCTF2018-writeup</span>
-        </a>
-        <div class="abstract-content">
-            easy_xor.apk1234a='kmqgwg]Tm3=NE_/4ouKJW@WE^'b='#$%$#!&amp;#^_^~(:p@_*#######'c = [chr(ord(x)^ord(y)) for x,y in zip(a,b)]print ''.join(c)
-简单xor即可：HITCTF{w3lc0me_t0_hitctf}
-stackflow123456789int vuln()&#123;  char buf; // [esp+0h] [ebp-28h]  puts("Welcome to pwn world!\nLeave your name:");  fflus...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ctf">ctf</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2018/01/30/pwn-imdb/" >
             
                 <span>pwn-imdb</span>
@@ -604,63 +373,11 @@ stackflow123456789int vuln()&#123;  char buf; // [esp+0h] [ebp-28h]  puts("Welco
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+        <a class="extend prev" rel="prev" href="/tags/pwn/">&#60; PREV</a><a class="page-number" href="/tags/pwn/">1</a><span class="page-number current">2</span>
     </nav>
     
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/15325007.jpg >
-    <div class="profile-name">kir[A]</div>
-    
-    <div class="profile-signature">
-        Ju5t f0r fun~
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="mailto:304822113@qq.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/4f-kira" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
-            
-        
-    
-
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //www.google.co.jp target="_black">Google</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
