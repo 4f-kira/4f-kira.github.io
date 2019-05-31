@@ -346,18 +346,21 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/01/30/pwn-imdb/" >
+        <a class="abstract-title" href = "/2019/05/31/tcahe-pwn/" >
             
-                <span>pwn-imdb</span>
+                <span>tcache在pwn题中常见的利用姿势</span>
         </a>
         <div class="abstract-content">
-            blog已经搭了一段时间了，拖延症发作，一直没写。最近没做什么有意思的题，就写一下某CTF群的入群题解题思路。
-程序伪代码menu1234567891011121314151617181920212223242526272829303132333435void __fastcall main(__int64 a1, char **a2, char **a3)&#123;  char v3; // [rsp+0h] [rbp-18h]  setbuf(stdout, 0LL);  signal(14, handler);  puts("*** Welcome to IMDB ***"); ...
+            tcache在pwn题中常见的利用姿势本文首投于先知论坛 https://xz.aliyun.com/t/4102
+前言tcache是 glibc 2.26(ubuntu 17.10) 之后引入的一种技术，目的是提升堆管理的性能，最近tcache机制的pwn题越来越多，趁着春节放假，学习了一下tcache在pwn题中是如何利用的。下面通过几条tcache的题目，分享下此类题目常规利用姿势。
+题目链接链接: https://pan.baidu.com/s/11EIvOiNOsFTFWavScsR7eQ 提取码: vter
+需要使用Ubuntu17.04以上版本进行练习。
+tcache基础知...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/30</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/31</span>
             </div>
             <!-- tags  -->
             
