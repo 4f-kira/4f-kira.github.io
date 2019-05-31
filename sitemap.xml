@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://4f-kira.github.io/2019/05/31/UTCTF2019-pwn-writeup/</loc>
+    
+    <lastmod>2019-05-31T02:28:22.665Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://4f-kira.github.io/2019/05/31/TAMUctf2019-pwn-writeup/</loc>
     
     <lastmod>2019-05-31T02:26:08.881Z</lastmod>
