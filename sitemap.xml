@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://4f-kira.github.io/2019/06/08/ddctf2019/</loc>
+    
+    <lastmod>2019-06-08T09:39:39.903Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://4f-kira.github.io/2019/05/31/encryptCTF2019-web-pwn-writeup/</loc>
     
     <lastmod>2019-05-31T03:30:54.205Z</lastmod>
