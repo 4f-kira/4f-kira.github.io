@@ -359,6 +359,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/06/huwangbei-awd-pwn/" >
+            
+                <span>首届护网杯AWD PWN题writeup</span>
+        </a>
+        <div class="abstract-content">
+            前言上个月在护网杯打了个酱油，第一次打某宁的线下赛，风格跟某春秋差别还是挺大的，没什么端口限制，提flag接口也很友好，属于最开放的网络环境了，可以用各种大杀器（然而我没有准备= =|||）。比赛当时只用到了最简单的洞，虽然官方给了流量（队友不说我都没发现。。。），但是没啥经验，比赛的时候也没成功重放。总体来说题目质量不错，难得有攻击流量，赛后来学习一波吧~
+shell这题有一个超级简单的命令执行洞，直接ls后闭合命令就可以了，如/ &amp;&amp; cat ../flag。另外还有一个堆的洞，网上有大神分析过，我就不写了，直接给EXP，原理差不多，漏洞利用方式略有不同而已。
+123...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/29/huwangbei-bookmanager/" >
             
                 <span>护网杯线下赛积分赛bookManager</span>
@@ -647,37 +678,6 @@ IDA中建一个pig的结构体：
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/04/qwb-pwn-silent1&2/" >
-            
-                <span>qwb-pwn-silent1&amp;2</span>
-        </a>
-        <div class="abstract-content">
-            好菜，只做了一题，慢慢补~
-silent程序有3个功能，分别是add，delete和edit
-12345678910111213141516171819__int64 add_()&#123;  size_t size; // [rsp+0h] [rbp-20h]  unsigned __int64 i; // [rsp+8h] [rbp-18h]  void *v3; // [rsp+10h] [rbp-10h]  unsigned __int64 v4; // [rsp+18h] [rbp-8h]  v4 = __readfsqword(0x28u);  __isoc99_scanf...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/04</span>
             </div>
             <!-- tags  -->
             
@@ -1088,24 +1088,9 @@ silent程序有3个功能，分别是add，delete和edit
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 23
+        Total : 24
         </div>
         <!-- search  -->
         
@@ -1118,6 +1103,11 @@ silent程序有3个功能，分别是add，delete和edit
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/10</span><a class="archive-post-title" href= "/2019/10/10/gdqwb-awd-writeup/" >广东强网杯AWD题目分析</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1141,17 +1131,17 @@ silent程序有3个功能，分别是add，delete和edit
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/tcahe-pwn/" >tcache在pwn题中常见的利用姿势</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/TAMUctf2019-pwn-writeup/" >TAMUctf2019-pwn-writeup</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/encryptCTF2019-web-pwn-writeup/" >encryptCTF2019-web&pwn-writeup</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/tcahe-pwn/" >tcache在pwn题中常见的利用姿势</a>
         </li>
     
     
@@ -1248,11 +1238,13 @@ silent程序有3个功能，分别是add，delete和edit
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="pwn"><span class="iconfont-archer">&#xe606;</span>pwn</span>
-    
         <span class="sidebar-tag-name" data-tags="ctf"><span class="iconfont-archer">&#xe606;</span>ctf</span>
     
+        <span class="sidebar-tag-name" data-tags="pwn"><span class="iconfont-archer">&#xe606;</span>pwn</span>
+    
         <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
+    
+        <span class="sidebar-tag-name" data-tags="awd"><span class="iconfont-archer">&#xe606;</span>awd</span>
     
         <span class="sidebar-tag-name" data-tags="杂"><span class="iconfont-archer">&#xe606;</span>杂</span>
     
