@@ -346,112 +346,24 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/12/qwb-pwn-raisepig/" >
+        <a class="abstract-title" href = "/2019/11/04/JTXA-CTF/" >
             
-                <span>qwb-pwn-raisepig</span>
+                <span>JTXA-CTF</span>
         </a>
         <div class="abstract-content">
-            raisepig跟pwnable.tw的Secret Garden非常似。菜单有5个选项：12345puts(&quot;1 . Raise a pig &quot;);puts(&quot;2 . Visit pigs &quot;);puts(&quot;3 . Eat a pig&quot;);puts(&quot;4 . Eat the whole Pig Farm&quot;);puts(&quot;5 . Leave the Farm&quot;);
-IDA中建一个pig的结构体：
-1234500000000 pigs            struc ; (sizeof=0...
+            JTXA-CTF 非官方writeup官方版还没发布，吃瓜群众版writeup先行发布，超详细的。
+0x1 好像没有什么思路略
+0x2 好像没有什么思路2也略
+0x3 Caesar继续略
+0x4 babyRSA这题还是略
+0x5 SSTI没环境，略
+0x6 这是什么提取zip包，我直接WinRAR打开都没提示加密，解压后是Base64隐写，直接脚本跑就好了。
+123456789101112131415161718192021222324252627def get_base64_diff_value(s1, s2):  base64chars = 'ABCDEFGHIJKLMNOPQRST...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/04/qwb-pwn-silent1&2/" >
-            
-                <span>qwb-pwn-silent1&amp;2</span>
-        </a>
-        <div class="abstract-content">
-            好菜，只做了一题，慢慢补~
-silent程序有3个功能，分别是add，delete和edit
-12345678910111213141516171819__int64 add_()&#123;  size_t size; // [rsp+0h] [rbp-20h]  unsigned __int64 i; // [rsp+8h] [rbp-18h]  void *v3; // [rsp+10h] [rbp-10h]  unsigned __int64 v4; // [rsp+18h] [rbp-8h]  v4 = __readfsqword(0x28u);  __isoc99_scanf...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/07/Hgame-pwn/" >
-            
-                <span>Hgame pwn</span>
-        </a>
-        <div class="abstract-content">
-            终于补完了Hgame的pwn，学到很多新姿势。
-guess_number12345678printf("enter your guess:");  __isoc99_scanf("%s", &amp;nptr);  if ( atoi(&amp;nptr) == a1 )  &#123;    printf("OHHHHHHH! u did it !\norz orz orz orz\nhere is your flag:");    system("cat flag");    exit(0);  &#125;
-虽然开了canary，但是只要输入的东西覆盖到随机数，判断一样就cat f...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/05/HITCTF2018-writeup/" >
-            
-                <span>HITCTF2018-writeup</span>
-        </a>
-        <div class="abstract-content">
-            easy_xor.apk1234a='kmqgwg]Tm3=NE_/4ouKJW@WE^'b='#$%$#!&amp;#^_^~(:p@_*#######'c = [chr(ord(x)^ord(y)) for x,y in zip(a,b)]print ''.join(c)
-简单xor即可：HITCTF{w3lc0me_t0_hitctf}
-stackflow123456789int vuln()&#123;  char buf; // [esp+0h] [ebp-28h]  puts("Welcome to pwn world!\nLeave your name:");  fflus...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/05</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/04</span>
             </div>
             <!-- tags  -->
             
@@ -464,41 +376,7 @@ stackflow123456789int vuln()&#123;  char buf; // [esp+0h] [ebp-28h]  puts("Welco
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/01/30/pwn-imdb/" >
-            
-                <span>pwn-imdb</span>
-        </a>
-        <div class="abstract-content">
-            blog已经搭了一段时间了，拖延症发作，一直没写。最近没做什么有意思的题，就写一下某CTF群的入群题解题思路。
-程序伪代码menu1234567891011121314151617181920212223242526272829303132333435void __fastcall main(__int64 a1, char **a2, char **a3)&#123;  char v3; // [rsp+0h] [rbp-18h]  setbuf(stdout, 0LL);  signal(14, handler);  puts("*** Welcome to IMDB ***"); ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/2/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
     
 </main>
             <!-- profile -->
