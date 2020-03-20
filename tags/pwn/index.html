@@ -346,6 +346,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/03/20/glibc2-29-tcache/" >
+            
+                <span>tcache poisoning在glibc2.29中的利用小结</span>
+        </a>
+        <div class="abstract-content">
+            tcache poisoning在glibc2.29中的利用小结本文首发于：https://xz.aliyun.com/t/7292
+前言最近在练习渗透，万万没想到做渗透还是遇上了pwn，提权过程发现一个有suid的二进制程序，程序的漏洞比较明显，唯一难点是程序使用的libc版本较高，为glibc2.29，这么高版本的libc还没了解过，借此机会学一下2.29libc新增的保护机制，以及如何绕过新增的保护，使用tcache进行攻击。
+Glibc-2.29 tcache新增防护机制tcache是glibc-2.26引入的一种新技术，目的是提升堆管理的性能，早期的libc对tcache基本没...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/06/09/powerpc/" >
             
                 <span>PowerPC栈溢出初探：从放弃到getshell</span>
@@ -633,37 +664,6 @@ shellco...
             opm首先学习一下在IDA创建结构体，https://blog.csdn.net/hgy413/article/details/7104304
 12345600000000 role            struc ; (sizeof=0x20, mappedto_6)00000000 func            dq ?00000008 name            dq ?00000010 length          dq ?00000018 punch_num       dq ?00000020 role            ends
 按y重新设置类型后，add_r...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/12/qwb-pwn-raisepig/" >
-            
-                <span>qwb-pwn-raisepig</span>
-        </a>
-        <div class="abstract-content">
-            raisepig跟pwnable.tw的Secret Garden非常似。菜单有5个选项：12345puts(&quot;1 . Raise a pig &quot;);puts(&quot;2 . Visit pigs &quot;);puts(&quot;3 . Eat a pig&quot;);puts(&quot;4 . Eat the whole Pig Farm&quot;);puts(&quot;5 . Leave the Farm&quot;);
-IDA中建一个pig的结构体：
-1234500000000 pigs            struc ; (sizeof=0...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1082,33 +1082,9 @@ IDA中建一个pig的结构体：
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 27
         </div>
         <!-- search  -->
         
@@ -1118,6 +1094,25 @@ IDA中建一个pig的结构体：
     
     
     
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/20</span><a class="archive-post-title" href= "/2020/03/20/glibc2-29-tcache/" >tcache poisoning在glibc2.29中的利用小结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/20</span><a class="archive-post-title" href= "/2020/03/20/house-of-roman/" >House-Of-Roman学习笔记</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
@@ -1149,22 +1144,22 @@ IDA中建一个pig的结构体：
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/tcahe-pwn/" >tcache在pwn题中常见的利用姿势</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/TAMUctf2019-pwn-writeup/" >TAMUctf2019-pwn-writeup</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/encryptCTF2019-web-pwn-writeup/" >encryptCTF2019-web&pwn-writeup</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/UTCTF2019-pwn-writeup/" >UTCTF2019-pwn-writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/tcahe-pwn/" >tcache在pwn题中常见的利用姿势</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/TAMUctf2019-pwn-writeup/" >TAMUctf2019-pwn-writeup</a>
         </li>
     
     

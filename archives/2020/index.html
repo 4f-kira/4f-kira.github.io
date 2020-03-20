@@ -346,32 +346,21 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/04/JTXA-CTF/" >
+        <a class="abstract-title" href = "/2020/03/20/house-of-roman/" >
             
-                <span>JTXA-CTF</span>
+                <span>House-Of-Roman学习笔记</span>
         </a>
         <div class="abstract-content">
-            JTXA-CTF 非官方writeup官方版还没发布，吃瓜群众版writeup先行发布，超详细的。
-0x1 好像没有什么思路略
-0x2 好像没有什么思路2也略
-0x3 Caesar继续略
-0x4 babyRSA这题还是略
-0x5 SSTI没环境，略
-0x6 这是什么提取zip包，我直接WinRAR打开都没提示加密，解压后是Base64隐写，直接脚本跑就好了。
-123456789101112131415161718192021222324252627def get_base64_diff_value(s1, s2):  base64chars = 'ABCDEFGHIJKLMNOPQRST...
+            House-Of-Roman学习笔记本文首发于：https://xz.aliyun.com/t/6549
+最近整理护网杯的题目（今年护网杯凉了），发现去年还留下一题pwn没有完成，题目提示是house of roman，最近一次比赛也出现了一道叫fkroman的题目，估计也是涉及这个知识点，趁此机会学习一下house of roman，把去年留下的坑填上。
+原理简述House of Roman这个攻击方法由romanking98在2018年4月提出（作者GitHub：https://github.com/romanking98/House-Of-Roman ），主要用于程序无打印功能，在...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/04</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/20</span>
             </div>
             <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ctf">ctf</a>
-    
-</div>
             
         </div>
     </article>
@@ -382,147 +371,25 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/05/jtwlb-ctf/" >
+        <a class="abstract-title" href = "/2020/03/20/glibc2-29-tcache/" >
             
-                <span>JTWLB-CTF-Writeup</span>
+                <span>tcache poisoning在glibc2.29中的利用小结</span>
         </a>
         <div class="abstract-content">
-            JTWLB CTF非官方writeup前言这次JT的CTF题目质量还是不错的，但是运维CTF加一起才5小时，时间实在太紧，而且CTF的性价比明显不高，大部分题目都不只一个考点，也设了不少坑（出题人称为了防止AK）。比赛的时候，很多题目都没时间打开看，因此赛后重新把没做出来的题目复现一下，简单写了一下writeup，各位大佬如果有哪里看不懂，也不要找我，找出题人去~
-
-cryptbabyrsa题目提供的e=33，不是素数，直接求d会报错，因此需要先用e=11求出一个d，然后进行一次解密，之后就是e=3的套路了。1234567891011121314151617from libnum imp...
+            tcache poisoning在glibc2.29中的利用小结本文首发于：https://xz.aliyun.com/t/7292
+前言最近在练习渗透，万万没想到做渗透还是遇上了pwn，提权过程发现一个有suid的二进制程序，程序的漏洞比较明显，唯一难点是程序使用的libc版本较高，为glibc2.29，这么高版本的libc还没了解过，借此机会学一下2.29libc新增的保护机制，以及如何绕过新增的保护，使用tcache进行攻击。
+Glibc-2.29 tcache新增防护机制tcache是glibc-2.26引入的一种新技术，目的是提升堆管理的性能，早期的libc对tcache基本没...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/05</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/20</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ctf">ctf</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/06/08/ddctf2019/" >
-            
-                <span>ddctf2019-misc&amp;web&amp;re-writeup</span>
-        </a>
-        <div class="abstract-content">
-            本文首发于先知论坛 https://xz.aliyun.com/t/4887
-DDCTF2019刚刚结束的ddctf2019，题目质量还是不错的，当然脑洞也不小，也有出题人不谨慎而导致非预期解，下面也会提及。共计23题，完成17题，Android一道没做，re、misc、web都差最后一题，待其他大神发writeup了。
-WEB滴~访问自动跳转到 http://117.51.150.246/index.php?jpg=TmpZMlF6WXhOamN5UlRaQk56QTJOdz09 ，页面上显示flag.jpg对TmpZMlF6WXhOamN5UlRaQk56QTJOdz09 分析可知为...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ctf">ctf</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/20/swpuctf2018/" >
-            
-                <span>swpuctf2018</span>
-        </a>
-        <div class="abstract-content">
-            swpu2018年底忙成狗，没什么时间，花了两个晚上的时间，做了一下简单的题目，还有些题目后面继续补。
-web用优惠码 买个 X ?注册一个账号，然后登陆，会弹出一个15位优惠码，在页面输入提醒优惠码为24位，扫描后发现源码，如下：
-123456789101112131415161718192021222324252627&lt;?php//生成优惠码$_SESSION['seed']=rand(0,999999999);function youhuima()&#123;	mt_srand($_SESSION['seed']);    $str_rand = "abcdefghijklm...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ctf">ctf</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/05/02/redhat2018/" >
-            
-                <span>广东红帽杯2018 writeup</span>
-        </a>
-        <div class="abstract-content">
-            MiscNot Only Wireshark（solved）http://static2.ichunqiu.com/icq/resources/fileupload/CTF/echunqiu/redhat/NotOnlyWireshark_ed63b63425ec3ed09470d8715b208293.zip?pass=nullhint: tshark打开流量包，直接查看http数据，发现存在很多name=xxx的访问记录，将所有16进制提取出来。1# strings 123.pcapng| grep name| grep -oP "name=[0-9A-F]+"| tr -d 'na...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ctf">ctf</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/05/HITCTF2018-writeup/" >
-            
-                <span>HITCTF2018-writeup</span>
-        </a>
-        <div class="abstract-content">
-            easy_xor.apk1234a='kmqgwg]Tm3=NE_/4ouKJW@WE^'b='#$%$#!&amp;#^_^~(:p@_*#######'c = [chr(ord(x)^ord(y)) for x,y in zip(a,b)]print ''.join(c)
-简单xor即可：HITCTF{w3lc0me_t0_hitctf}
-stackflow123456789int vuln()&#123;  char buf; // [esp+0h] [ebp-28h]  puts("Welcome to pwn world!\nLeave your name:");  fflus...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ctf">ctf</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
     
 </div>
             
