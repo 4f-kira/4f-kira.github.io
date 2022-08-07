@@ -346,173 +346,18 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/06/01/redhat2018-awd-pwn/" >
+        <a class="abstract-title" href = "/2022/08/07/qwb2022/" >
             
-                <span>红帽杯2018线下赛AWD PWN(更新格式化字符利用)</span>
+                <span>强网杯2022-houseofcat&amp;qwarnup&amp;devnull writeup</span>
         </a>
         <div class="abstract-content">
-            今年红帽杯给web题恶心到了，刚备份的代码已经有某国企的3个不死马，不知道如何做到这么快的，题目质量也堪忧，跟去年的没法比。比赛过程花太多时间在web，都没好好看看pwn，其实很简单，血亏T_T….
-保护情况12345Arch:     amd64-64-littleRELRO:    Partial RELROStack:    Canary foundNX:       NX enabledPIE:      PIE enabled
-程序分析123456789101112131415161718192021222324252627282930313233343536373839404...
+            强网杯2022-houseofcat&amp;qwarnup&amp;devnull writeup前言好久好久没打比赛，也没写blog了。这次强网杯难得iptl大佬带我打一次，得好好记录一下。题目质量很高，学到不少新姿势。
+house of cat题目有add，delete，show，edit功能，限制只能申请largebin，delete没清空指针，只能edit两次，限制系统调用。题目使用libc-2.35123456789101112131415161718192021 line  CODE  JT   JF      K==============================...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/12/qwb-pwn-opm/" >
-            
-                <span>qwb-pwn-opm</span>
-        </a>
-        <div class="abstract-content">
-            opm首先学习一下在IDA创建结构体，https://blog.csdn.net/hgy413/article/details/7104304
-12345600000000 role            struc ; (sizeof=0x20, mappedto_6)00000000 func            dq ?00000008 name            dq ?00000010 length          dq ?00000018 punch_num       dq ?00000020 role            ends
-按y重新设置类型后，add_r...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/12/qwb-pwn-raisepig/" >
-            
-                <span>qwb-pwn-raisepig</span>
-        </a>
-        <div class="abstract-content">
-            raisepig跟pwnable.tw的Secret Garden非常似。菜单有5个选项：12345puts(&quot;1 . Raise a pig &quot;);puts(&quot;2 . Visit pigs &quot;);puts(&quot;3 . Eat a pig&quot;);puts(&quot;4 . Eat the whole Pig Farm&quot;);puts(&quot;5 . Leave the Farm&quot;);
-IDA中建一个pig的结构体：
-1234500000000 pigs            struc ; (sizeof=0...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/04/qwb-pwn-silent1&2/" >
-            
-                <span>qwb-pwn-silent1&amp;2</span>
-        </a>
-        <div class="abstract-content">
-            好菜，只做了一题，慢慢补~
-silent程序有3个功能，分别是add，delete和edit
-12345678910111213141516171819__int64 add_()&#123;  size_t size; // [rsp+0h] [rbp-20h]  unsigned __int64 i; // [rsp+8h] [rbp-18h]  void *v3; // [rsp+10h] [rbp-10h]  unsigned __int64 v4; // [rsp+18h] [rbp-8h]  v4 = __readfsqword(0x28u);  __isoc99_scanf...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/07/Hgame-pwn/" >
-            
-                <span>Hgame pwn</span>
-        </a>
-        <div class="abstract-content">
-            终于补完了Hgame的pwn，学到很多新姿势。
-guess_number12345678printf("enter your guess:");  __isoc99_scanf("%s", &amp;nptr);  if ( atoi(&amp;nptr) == a1 )  &#123;    printf("OHHHHHHH! u did it !\norz orz orz orz\nhere is your flag:");    system("cat flag");    exit(0);  &#125;
-虽然开了canary，但是只要输入的东西覆盖到随机数，判断一样就cat f...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "pwn">pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/01/30/pwn-imdb/" >
-            
-                <span>pwn-imdb</span>
-        </a>
-        <div class="abstract-content">
-            blog已经搭了一段时间了，拖延症发作，一直没写。最近没做什么有意思的题，就写一下某CTF群的入群题解题思路。
-程序伪代码menu1234567891011121314151617181920212223242526272829303132333435void __fastcall main(__int64 a1, char **a2, char **a3)&#123;  char v3; // [rsp+0h] [rbp-18h]  setbuf(stdout, 0LL);  signal(14, handler);  puts("*** Welcome to IMDB ***"); ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/30</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/07</span>
             </div>
             <!-- tags  -->
             
@@ -526,10 +371,6 @@ guess_number12345678printf("enter your guess:");  __isoc99_scanf("%s", &amp;nptr
     </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/tags/pwn/">&#60; PREV</a><a class="page-number" href="/tags/pwn/">1</a><span class="page-number current">2</span>
-    </nav>
     
 </main>
             <!-- profile -->
